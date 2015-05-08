@@ -38,22 +38,22 @@
         <ul class="sidebar-nav">
             <a id="menu-close" href="#" class="btn btn-light btn-lg pull-right toggle"><i class="fa fa-times"></i></a>
             <li class="sidebar-brand">
-                <a href="#top"  onclick = $("#menu-close").click(); >LookTaiwan SeeWater</a>
+                <a href="#top"  onclick ="$('#menu-close').click();" >LookTaiwan SeeWater</a>
             </li>
             <li>
-                <a href="#top" onclick = $("#menu-close").click(); >Home</a>
+                <a href="#top" onclick = "$('#menu-close').click();" >Home</a>
             </li>
             <li>
-                <a href="#about" onclick = $("#menu-close").click(); >About</a>
+                <a href="#about" onclick = "$('#menu-close').click();" >About</a>
             </li>
             <li>
-                <a href="#services" onclick = $("#menu-close").click(); >Services</a>
+                <a href="#services" onclick = "$('#menu-close').click();" >Services</a>
             </li>
             <li>
-                <a href="#portfolio" onclick = $("#menu-close").click(); >Portfolio</a>
+                <a href="#portfolio" onclick = "$('#menu-close').click();" >Portfolio</a>
             </li>
             <li>
-                <a href="#contact" onclick = $("#menu-close").click(); >Contact</a>
+                <a href="#contact" onclick = "$('#menu-close').click();" >Contact</a>
             </li>
         </ul>
     </nav>
@@ -72,10 +72,20 @@
     <section id="about" class="about">
         <div class="container">
             <div class="row">
+<!--
                 <div class="col-lg-12 text-center">
                     <h2>Introduction to LookTaiwanSeeWater Team</h2>
                     <p class="lead">Following paragraph is our introduction, which will be update later. <a target="_blank" href="https://www.facebook.com/groups/817680821620324/">Facebook Group</a>.</p>
                 </div>
+-->
+                <div class="col-lg-12">
+                    <svg id="fillgauge1" width="19%" height="200"></svg>
+                    <svg id="fillgauge2" width="19%" height="200"></svg>
+                    <svg id="fillgauge3" width="19%" height="200"></svg>
+                    <svg id="fillgauge4" width="19%" height="200"></svg>
+                    <svg id="fillgauge5" width="19%" height="200"></svg>
+                </div>
+                
             </div>
             <!-- /.row -->
         </div>
@@ -221,6 +231,7 @@
     </aside>
 
     <!-- Map -->
+<!--
     <section id="contact" class="map">
         <iframe width="100%" height="100%" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=Twitter,+Inc.,+Market+Street,+San+Francisco,+CA&amp;aq=0&amp;oq=twitter&amp;sll=28.659344,-81.187888&amp;sspn=0.128789,0.264187&amp;ie=UTF8&amp;hq=Twitter,+Inc.,+Market+Street,+San+Francisco,+CA&amp;t=m&amp;z=15&amp;iwloc=A&amp;output=embed"></iframe>
         <br />
@@ -229,6 +240,7 @@
         </small>
         </iframe>
     </section>
+-->
 
     <!-- Footer -->
     <footer>
@@ -270,36 +282,11 @@
     <script src="js/bootstrap.min.js"></script>
 
     <!-- Custom Theme JavaScript -->
-    <script>
-    // Closes the sidebar menu
-    $("#menu-close").click(function(e) {
-        e.preventDefault();
-        $("#sidebar-wrapper").toggleClass("active");
-    });
-
-    // Opens the sidebar menu
-    $("#menu-toggle").click(function(e) {
-        e.preventDefault();
-        $("#sidebar-wrapper").toggleClass("active");
-    });
-
-    // Scrolls to the selected menu item on the page
-    $(function() {
-        $('a[href*=#]:not([href=#])').click(function() {
-            if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') || location.hostname == this.hostname) {
-
-                var target = $(this.hash);
-                target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
-                if (target.length) {
-                    $('html,body').animate({
-                        scrollTop: target.offset().top
-                    }, 1000);
-                    return false;
-                }
-            }
-        });
-    });
-    </script>
+    <script src="js/main.js"></script>
+    
+    <script src="http://d3js.org/d3.v3.min.js"></script>
+    <script src="js/liquidFillGauge.js"></script>
+    
 
 </body>
 
