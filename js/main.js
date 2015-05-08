@@ -1,3 +1,4 @@
+var reservoirData;
 // Closes the sidebar menu
 $("#menu-close").click(function (e) {
     e.preventDefault();
@@ -35,27 +36,28 @@ $(function () {
         dataType: "jsonp",
         success: function (data) {
             
-            //data.data[0] 石門水庫
-            //data.data[1] 新山水庫
-            //data.data[2] 翡翠水庫
-            //data.data[3] 寶山水庫
-            //data.data[4] 寶山第二水庫
-            //data.data[5] 永和山水庫
-            //data.data[6] 明德水庫 
-            //data.data[7] 鯉魚潭水庫
-            //data.data[8] 德基水庫
-            //data.data[9] 石岡壩
-            //data.data[10] 霧社水庫
-            //data.data[11] 日月潭水庫
-            //data.data[12] 仁義潭水庫
-            //data.data[13] 蘭潭水庫
-            //data.data[14] 烏山頭水庫
-            //data.data[15] 曾文水庫
-            //data.data[16] 南化水庫
-            //data.data[17] 阿公店水庫
-            //data.data[18] 阿公店水庫(洩洪至二仁溪)
-            //data.data[19] 牡丹水庫
-            //data.data[20] 成功水庫
+            reservoirData = data.data;
+            //reservoirData[0] 石門水庫
+            //reservoirData[1] 新山水庫
+            //reservoirData[2] 翡翠水庫
+            //reservoirData[3] 寶山水庫
+            //reservoirData[4] 寶山第二水庫
+            //reservoirData[5] 永和山水庫
+            //reservoirData[6] 明德水庫 
+            //reservoirData[7] 鯉魚潭水庫
+            //reservoirData[8] 德基水庫
+            //reservoirData[9] 石岡壩
+            //reservoirData[10] 霧社水庫
+            //reservoirData[11] 日月潭水庫
+            //reservoirData[12] 仁義潭水庫
+            //reservoirData[13] 蘭潭水庫
+            //reservoirData[14] 烏山頭水庫
+            //reservoirData[15] 曾文水庫
+            //reservoirData[16] 南化水庫
+            //reservoirData[17] 阿公店水庫
+            //reservoirData[18] 阿公店水庫(洩洪至二仁溪)
+            //reservoirData[19] 牡丹水庫
+            //reservoirData[20] 成功水庫
             
             var config1 = liquidFillGaugeDefaultSettings();
             config1.circleColor = "#FF7777";
@@ -65,7 +67,7 @@ $(function () {
             config1.circleThickness = 0.2;
             config1.textVertPosition = 0.2;
             config1.waveAnimateTime = 1000;
-            loadLiquidFillGauge("fillgauge1", Number(data.data[0].immediatePercentage.replace('%','')), config1);
+            loadLiquidFillGauge("fillgauge1", Number(reservoirData[0].immediatePercentage.replace('%','')), config1);
             
             var config2 = liquidFillGaugeDefaultSettings();
             config2.circleColor = "#D4AB6A";
@@ -78,17 +80,10 @@ $(function () {
             config2.waveAnimateTime = 2000;
             config2.waveHeight = 0.3;
             config2.waveCount = 1;
-            loadLiquidFillGauge("fillgauge2", Number(data.data[2].immediatePercentage.replace('%','')), config2);
+            loadLiquidFillGauge("fillgauge2", Number(reservoirData[2].immediatePercentage.replace('%','')), config2);
             
             var config3 = liquidFillGaugeDefaultSettings();
-            config3.textVertPosition = 0.8;
-            config3.waveAnimateTime = 5000;
-            config3.waveHeight = 0.15;
-            config3.waveAnimate = false;
-            config3.waveOffset = 0.25;
-            config3.valueCountUp = false;
-            config3.displayPercent = false;
-            loadLiquidFillGauge("fillgauge3", Number(data.data[3].immediatePercentage.replace('%','')), config3);
+            loadLiquidFillGauge("fillgauge3", Number(reservoirData[3].immediatePercentage.replace('%','')), config3);
             
             var config4 = liquidFillGaugeDefaultSettings();
             config4.circleThickness = 0.15;
@@ -104,7 +99,7 @@ $(function () {
             config4.waveOffset = 0.25;
             config4.textSize = 0.75;
             config4.waveCount = 3;
-            loadLiquidFillGauge("fillgauge4", Number(data.data[14].immediatePercentage.replace('%','')), config4);
+            loadLiquidFillGauge("fillgauge4", Number(reservoirData[14].immediatePercentage.replace('%','')), config4);
             
             var config5 = liquidFillGaugeDefaultSettings();
             config5.circleThickness = 0.4;
@@ -122,7 +117,7 @@ $(function () {
             config5.minValue = 30;
             config5.maxValue = 150
             config5.displayPercent = false;
-            loadLiquidFillGauge("fillgauge5", Number(data.data[15].immediatePercentage.replace('%','')), config5);
+            loadLiquidFillGauge("fillgauge5", Number(reservoirData[15].immediatePercentage.replace('%','')), config5);
         }
     });
 });
