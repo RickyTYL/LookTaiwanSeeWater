@@ -37,7 +37,7 @@ $(function () {
         success: function (data) {
             
             reservoirData = data.data;
-            //reservoirData[0] 石門水庫
+            //reservoirData[0] 石門水庫(新北、桃園、新竹)
             //reservoirData[1] 新山水庫
             //reservoirData[2] 翡翠水庫
             //reservoirData[3] 寶山水庫
