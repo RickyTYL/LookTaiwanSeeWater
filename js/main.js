@@ -35,7 +35,7 @@ $(function () {
         dataType: "jsonp",
         success: function (data) {
             
-            //data.data[0] 石門水庫
+            //data.data[0] 石門水庫(新北、桃園、新竹)
             //data.data[1] 新山水庫
             //data.data[2] 翡翠水庫
             //data.data[3] 寶山水庫
