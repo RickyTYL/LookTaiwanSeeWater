@@ -67,6 +67,38 @@ $(function () {
             loadLiquidFillGauge("fillgauge3", Number(data.data[3].immediatePercentage.replace('%','')), config3);
             var config4 = liquidFillGaugeDefaultSettings();
             loadLiquidFillGauge("fillgauge4", Number(data.data[4].immediatePercentage.replace('%','')), config4);
+            var config5 = liquidFillGaugeDefaultSettings();
+            loadLiquidFillGauge("fillgauge5", Number(data.data[5].immediatePercentage.replace('%','')), config5);
+            var config6 = liquidFillGaugeDefaultSettings();
+            loadLiquidFillGauge("fillgauge6", Number(data.data[6].immediatePercentage.replace('%','')), config6);
+            var config7 = liquidFillGaugeDefaultSettings();
+            loadLiquidFillGauge("fillgauge7", Number(data.data[7].immediatePercentage.replace('%','')), config7);
+            var config8 = liquidFillGaugeDefaultSettings();
+            loadLiquidFillGauge("fillgauge8", Number(data.data[8].immediatePercentage.replace('%','')), config8);
+            var config9 = liquidFillGaugeDefaultSettings();
+            loadLiquidFillGauge("fillgauge9", Number(data.data[9].immediatePercentage.replace('%','')), config9);
+            var config10 = liquidFillGaugeDefaultSettings();
+            loadLiquidFillGauge("fillgauge10", Number(data.data[10].immediatePercentage.replace('%','')), config10);
+            var config11 = liquidFillGaugeDefaultSettings();
+            loadLiquidFillGauge("fillgauge11", Number(data.data[11].immediatePercentage.replace('%','')), config11);
+            var config12 = liquidFillGaugeDefaultSettings();
+            loadLiquidFillGauge("fillgauge12", Number(data.data[12].immediatePercentage.replace('%','')), config12);
+            var config13 = liquidFillGaugeDefaultSettings();
+            loadLiquidFillGauge("fillgauge13", Number(data.data[13].immediatePercentage.replace('%','')), config13);
+            var config14 = liquidFillGaugeDefaultSettings();
+            loadLiquidFillGauge("fillgauge14", Number(data.data[14].immediatePercentage.replace('%','')), config14);
+            var config15 = liquidFillGaugeDefaultSettings();
+            loadLiquidFillGauge("fillgauge15", Number(data.data[15].immediatePercentage.replace('%','')), config15);
+            var config16 = liquidFillGaugeDefaultSettings();
+            loadLiquidFillGauge("fillgauge16", Number(data.data[16].immediatePercentage.replace('%','')), config16);
+            var config17 = liquidFillGaugeDefaultSettings();
+            loadLiquidFillGauge("fillgauge17", Number(data.data[17].immediatePercentage.replace('%','')), config17);
+            var config18 = liquidFillGaugeDefaultSettings();
+            loadLiquidFillGauge("fillgauge18", Number(data.data[18].immediatePercentage.replace('%','')), config18);
+            var config19 = liquidFillGaugeDefaultSettings();
+            loadLiquidFillGauge("fillgauge19", Number(data.data[19].immediatePercentage.replace('%','')), config19);
+            var config20 = liquidFillGaugeDefaultSettings();
+            loadLiquidFillGauge("fillgauge20", Number(data.data[20].immediatePercentage.replace('%','')), config20);
 
 
             var config10 = liquidFillGaugeDefaultSettings();
