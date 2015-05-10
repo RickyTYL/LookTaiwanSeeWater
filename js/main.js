@@ -77,8 +77,8 @@ $(function () {
             loadLiquidFillGauge("fillgauge8", Number(data.data[8].immediatePercentage.replace('%','')), config8);
             var config9 = liquidFillGaugeDefaultSettings();
             loadLiquidFillGauge("fillgauge9", Number(data.data[9].immediatePercentage.replace('%','')), config9);
-            var config10 = liquidFillGaugeDefaultSettings();
-            loadLiquidFillGauge("fillgauge10", Number(data.data[10].immediatePercentage.replace('%','')), config10);
+            var config60 = liquidFillGaugeDefaultSettings();
+            loadLiquidFillGauge("fillgauge10", Number(data.data[10].immediatePercentage.replace('%','')), config60);
             var config11 = liquidFillGaugeDefaultSettings();
             loadLiquidFillGauge("fillgauge11", Number(data.data[11].immediatePercentage.replace('%','')), config11);
             var config12 = liquidFillGaugeDefaultSettings();
@@ -97,32 +97,32 @@ $(function () {
             loadLiquidFillGauge("fillgauge18", Number(data.data[18].immediatePercentage.replace('%','')), config18);
             var config19 = liquidFillGaugeDefaultSettings();
             loadLiquidFillGauge("fillgauge19", Number(data.data[19].immediatePercentage.replace('%','')), config19);
-            var config20 = liquidFillGaugeDefaultSettings();
-            loadLiquidFillGauge("fillgauge20", Number(data.data[20].immediatePercentage.replace('%','')), config20);
+            var config70 = liquidFillGaugeDefaultSettings();
+            loadLiquidFillGauge("fillgauge20", Number(data.data[20].immediatePercentage.replace('%','')), config70);
 
 
-            var config10 = liquidFillGaugeDefaultSettings();
-            config10.circleColor = "#FF7777";
-            config10.textColor = "#FF4444";
-            config10.waveTextColor = "#FFAAAA";
-            config10.waveColor = "#FFDDDD";
-            config10.circleThickness = 0.2;
-            config10.textVertPosition = 0.2;
-            config10.waveAnimateTime = 1000;
-            loadLiquidFillGauge("fillgauge10", Number(data.data[0].immediatePercentage.replace('%','')), config10);
+            var config60 = liquidFillGaugeDefaultSettings();
+            config60.circleColor = "#FF7777";
+            config60.textColor = "#FF4444";
+            config60.waveTextColor = "#FFAAAA";
+            config60.waveColor = "#FFDDDD";
+            config60.circleThickness = 0.2;
+            config60.textVertPosition = 0.2;
+            config60.waveAnimateTime = 1000;
+            loadLiquidFillGauge("fillgauge60", Number(data.data[0].immediatePercentage.replace('%','')), config60);
 
-            var config20 = liquidFillGaugeDefaultSettings();
-            config20.circleColor = "#D4AB6A";
-            config20.textColor = "#553300";
-            config20.waveTextColor = "#805615";
-            config20.waveColor = "#AA7D39";
-            config20.circleThickness = 0.1;
-            config20.circleFillGap = 0.2;
-            config20.textVertPosition = 0.8;
-            config20.waveAnimateTime = 2000;
-            config20.waveHeight = 0.3;
-            config20.waveCount = 1;
-            loadLiquidFillGauge("fillgauge20", Number(data.data[2].immediatePercentage.replace('%','')), config20);
+            var config70 = liquidFillGaugeDefaultSettings();
+            config70.circleColor = "#D4AB6A";
+            config70.textColor = "#553300";
+            config70.waveTextColor = "#805615";
+            config70.waveColor = "#AA7D39";
+            config70.circleThickness = 0.1;
+            config70.circleFillGap = 0.2;
+            config70.textVertPosition = 0.8;
+            config70.waveAnimateTime = 2000;
+            config70.waveHeight = 0.3;
+            config70.waveCount = 1;
+            loadLiquidFillGauge("fillgauge70", Number(data.data[2].immediatePercentage.replace('%','')), config70);
 
             var config30 = liquidFillGaugeDefaultSettings();
             config30.textVertPosition = 0.8;
