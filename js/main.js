@@ -36,26 +36,26 @@ $(function () {
         success: function (data) {
             
             //data.data[0] 石門水庫(新北、桃園、新竹)
-            //data.data[1] 新山水庫
-            //data.data[2] 翡翠水庫
-            //data.data[3] 寶山水庫
-            //data.data[4] 寶山第二水庫
-            //data.data[5] 永和山水庫
-            //data.data[6] 明德水庫 
-            //data.data[7] 鯉魚潭水庫
-            //data.data[8] 德基水庫
-            //data.data[9] 石岡壩
-            //data.data[10] 霧社水庫
-            //data.data[11] 日月潭水庫
-            //data.data[12] 仁義潭水庫
-            //data.data[13] 蘭潭水庫
-            //data.data[14] 烏山頭水庫
-            //data.data[15] 曾文水庫
-            //data.data[16] 南化水庫
-            //data.data[17] 阿公店水庫
-            //data.data[18] 阿公店水庫(洩洪至二仁溪)
-            //data.data[19] 牡丹水庫
-            //data.data[20] 成功水庫
+            //data.data[1] 新山水庫(基隆)
+            //data.data[2] 翡翠水庫(台北、新北)
+            //data.data[3] 寶山水庫(新竹)
+            //data.data[4] 寶山第二水庫(新竹)
+            //data.data[5] 永和山水庫(新竹、苗栗)
+            //data.data[6] 明德水庫(苗栗)
+            //data.data[7] 鯉魚潭水庫(苗栗、台中)
+            //data.data[8] 德基水庫(台中)
+            //data.data[9] 石岡壩(台中)
+            //data.data[10] 霧社水庫(南投)
+            //data.data[11] 日月潭水庫(南投)
+            //data.data[12] 仁義潭水庫(嘉義)
+            //data.data[13] 蘭潭水庫(嘉義)
+            //data.data[14] 烏山頭水庫(台南)
+            //data.data[15] 曾文水庫(嘉義、台南)
+            //data.data[16] 南化水庫(台南、高雄)
+            //data.data[17] 阿公店水庫(高雄)
+            //data.data[18] 阿公店水庫(高雄、洩洪至二仁溪)
+            //data.data[19] 牡丹水庫(屏東)
+            //data.data[20] 成功水庫(澎湖)
             
             var config1 = liquidFillGaugeDefaultSettings();
             config1.circleColor = "#FF7777";
