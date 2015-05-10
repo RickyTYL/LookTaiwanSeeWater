@@ -62,11 +62,11 @@ $(function () {
             var config1 = liquidFillGaugeDefaultSettings();
             loadLiquidFillGauge("fillgauge1", Number(data.data[1].immediatePercentage.replace('%','')), config1);
             var config2 = liquidFillGaugeDefaultSettings();
-            loadLiquidFillGauge("fillgauge2", Number(data.data[].immediatePercentage.replace('%','')), config2);
+            loadLiquidFillGauge("fillgauge2", Number(data.data[2].immediatePercentage.replace('%','')), config2);
             var config3 = liquidFillGaugeDefaultSettings();
-            loadLiquidFillGauge("fillgauge3", Number(data.data[].immediatePercentage.replace('%','')), config3);
+            loadLiquidFillGauge("fillgauge3", Number(data.data[3].immediatePercentage.replace('%','')), config3);
             var config4 = liquidFillGaugeDefaultSettings();
-            loadLiquidFillGauge("fillgauge4", Number(data.data[].immediatePercentage.replace('%','')), config4);
+            loadLiquidFillGauge("fillgauge4", Number(data.data[4].immediatePercentage.replace('%','')), config4);
 
 
             var config10 = liquidFillGaugeDefaultSettings();
