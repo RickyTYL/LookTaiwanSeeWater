@@ -77,7 +77,7 @@ $(function () {
             config10.circleThickness = 0.2;
             config10.textVertPosition = 0.2;
             config10.waveAnimateTime = 1000;
-            loadLiquidFillGauge("fillgauge1", Number(data.data[0].immediatePercentage.replace('%','')), config10);
+            loadLiquidFillGauge("fillgauge10", Number(data.data[0].immediatePercentage.replace('%','')), config10);
 
             var config20 = liquidFillGaugeDefaultSettings();
             config20.circleColor = "#D4AB6A";
@@ -90,7 +90,7 @@ $(function () {
             config20.waveAnimateTime = 2000;
             config20.waveHeight = 0.3;
             config20.waveCount = 1;
-            loadLiquidFillGauge("fillgauge2", Number(data.data[2].immediatePercentage.replace('%','')), config20);
+            loadLiquidFillGauge("fillgauge20", Number(data.data[2].immediatePercentage.replace('%','')), config20);
 
             var config30 = liquidFillGaugeDefaultSettings();
             config30.textVertPosition = 0.8;
@@ -100,7 +100,7 @@ $(function () {
             config30.waveOffset = 0.25;
             config30.valueCountUp = false;
             config30.displayPercent = false;
-            loadLiquidFillGauge("fillgauge3", Number(data.data[3].immediatePercentage.replace('%','')), config30);
+            loadLiquidFillGauge("fillgauge30", Number(data.data[3].immediatePercentage.replace('%','')), config30);
 
             var config40 = liquidFillGaugeDefaultSettings();
             config40.circleThickness = 0.15;
@@ -116,7 +116,7 @@ $(function () {
             config40.waveOffset = 0.25;
             config40.textSize = 0.75;
             config40.waveCount = 3;
-            loadLiquidFillGauge("fillgauge4", Number(data.data[14].immediatePercentage.replace('%','')), config40);
+            loadLiquidFillGauge("fillgauge40", Number(data.data[14].immediatePercentage.replace('%','')), config40);
 
             var config50 = liquidFillGaugeDefaultSettings();
             config50.circleThickness = 0.4;
@@ -134,7 +134,7 @@ $(function () {
             config50.minValue = 30;
             config50.maxValue = 150
             config50.displayPercent = false;
-            loadLiquidFillGauge("fillgauge5", Number(data.data[15].immediatePercentage.replace('%','')), config50);
+            loadLiquidFillGauge("fillgauge50", Number(data.data[15].immediatePercentage.replace('%','')), config50);
         }
     });
 });
