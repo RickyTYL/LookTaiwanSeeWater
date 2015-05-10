@@ -60,18 +60,12 @@ $(function () {
             //data.data[20] 成功水庫(澎湖)
 
             var config0 = liquidFillGaugeDefaultSettings();
-            if(Number(data.data[0].immediatePercentage) <= 30){
+        
               config0.circleColor = "#FF7777";
               config0.textColor = "#FF4444";
               config0.waveTextColor = "#FFAAAA";
               config0.waveColor = "#FFDDDD";
-            }
-            else if(Number(data.data[0].immediatePercentage) <= 60){
-              config0.circleColor = "#808015";
-              config0.textColor = "#555500";
-              config0.waveTextColor = "#FFFFAA";
-              config0.waveColor = "#AAAA39";
-            }
+
             loadLiquidFillGauge("fillgauge0", Number(data.data[0].immediatePercentage.replace('%','')), config0);
 
             var config1 = liquidFillGaugeDefaultSettings();
@@ -120,13 +114,13 @@ $(function () {
             loadLiquidFillGauge("fillgauge3", Number(data.data[3].immediatePercentage.replace('%','')), config3);
 
             var config4 = liquidFillGaugeDefaultSettings();
-            if(Number(data.data[4].immediatePercentage) <= 30){
+            if(data.data[4].immediatePercentage <= 30){
               config4.circleColor = "#FF7777";
               config4.textColor = "#FF4444";
               config4.waveTextColor = "#FFAAAA";
               config4.waveColor = "#FFDDDD";
             }
-            else if(Number(data.data[4].immediatePercentage) <= 60){
+            else if(data.data[4].immediatePercentage <= 60){
               config4.circleColor = "#808015";
               config4.textColor = "#555500";
               config4.waveTextColor = "#FFFFAA";
