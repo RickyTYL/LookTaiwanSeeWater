@@ -60,15 +60,80 @@ $(function () {
             //data.data[20] 成功水庫(澎湖)
 
             var config0 = liquidFillGaugeDefaultSettings();
+            if(data.data[0].immediatePercentage <= 30){
+              config0.circleColor = "#FF7777";
+              config0.textColor = "#FF4444";
+              config0.waveTextColor = "#FFAAAA";
+              config0.waveColor = "#FFDDDD";
+            }
+            else if(data.data[0].immediatePercentage <= 60){
+              config0.circleColor = "#808015";
+              config0.textColor = "#555500";
+              config0.waveTextColor = "#FFFFAA";
+              config0.waveColor = "#AAAA39";
+            }
             loadLiquidFillGauge("fillgauge0", Number(data.data[0].immediatePercentage.replace('%','')), config0);
+
             var config1 = liquidFillGaugeDefaultSettings();
+            if(data.data[1].immediatePercentage <= 30){
+              config1.circleColor = "#FF7777";
+              config1.textColor = "#FF4444";
+              config1.waveTextColor = "#FFAAAA";
+              config1.waveColor = "#FFDDDD";
+            }
+            else if(data.data[1].immediatePercentage <= 60){
+              config1.circleColor = "#808015";
+              config1.textColor = "#555500";
+              config1.waveTextColor = "#FFFFAA";
+              config1.waveColor = "#AAAA39";
+            }
             loadLiquidFillGauge("fillgauge1", Number(data.data[1].immediatePercentage.replace('%','')), config1);
+
             var config2 = liquidFillGaugeDefaultSettings();
+            if(data.data[2].immediatePercentage <= 30){
+              config2.circleColor = "#FF7777";
+              config2.textColor = "#FF4444";
+              config2.waveTextColor = "#FFAAAA";
+              config2.waveColor = "#FFDDDD";
+            }
+            else if(data.data[2].immediatePercentage <= 60){
+              config2.circleColor = "#808015";
+              config2.textColor = "#555500";
+              config2.waveTextColor = "#FFFFAA";
+              config2.waveColor = "#AAAA39";
+            }
             loadLiquidFillGauge("fillgauge2", Number(data.data[2].immediatePercentage.replace('%','')), config2);
+
             var config3 = liquidFillGaugeDefaultSettings();
+            if(data.data[3].immediatePercentage <= 30){
+              config3.circleColor = "#FF7777";
+              config3.textColor = "#FF4444";
+              config3.waveTextColor = "#FFAAAA";
+              config3.waveColor = "#FFDDDD";
+            }
+            else if(data.data[3].immediatePercentage <= 60){
+              config3.circleColor = "#808015";
+              config3.textColor = "#555500";
+              config3.waveTextColor = "#FFFFAA";
+              config3.waveColor = "#AAAA39";
+            }
             loadLiquidFillGauge("fillgauge3", Number(data.data[3].immediatePercentage.replace('%','')), config3);
+
             var config4 = liquidFillGaugeDefaultSettings();
+            if(data.data[4].immediatePercentage <= 30){
+              config4.circleColor = "#FF7777";
+              config4.textColor = "#FF4444";
+              config4.waveTextColor = "#FFAAAA";
+              config4.waveColor = "#FFDDDD";
+            }
+            else if(data.data[4].immediatePercentage <= 60){
+              config4.circleColor = "#808015";
+              config4.textColor = "#555500";
+              config4.waveTextColor = "#FFFFAA";
+              config4.waveColor = "#AAAA39";
+            }
             loadLiquidFillGauge("fillgauge4", Number(data.data[4].immediatePercentage.replace('%','')), config4);
+
             var config5 = liquidFillGaugeDefaultSettings();
             loadLiquidFillGauge("fillgauge5", Number(data.data[5].immediatePercentage.replace('%','')), config5);
             var config6 = liquidFillGaugeDefaultSettings();
@@ -101,6 +166,12 @@ $(function () {
             loadLiquidFillGauge("fillgauge19", Number(data.data[19].immediatePercentage.replace('%','')), config19);
             var config70 = liquidFillGaugeDefaultSettings();
             loadLiquidFillGauge("fillgauge20", Number(data.data[20].immediatePercentage.replace('%','')), config70);
+
+
+
+
+
+
 
 
             var config60 = liquidFillGaugeDefaultSettings();
