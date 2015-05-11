@@ -114,25 +114,31 @@ $(function () {
             loadLiquidFillGauge("fillgauge3", Number(data.data[3].immediatePercentage.replace('%','')), config3);
 
             var config4 = liquidFillGaugeDefaultSettings();
-            if(data.data[4].immediatePercentage <= 30){
-              config4.circleColor = "#FF7777";
-              config4.textColor = "#FF4444";
-              config4.waveTextColor = "#FFAAAA";
-              config4.waveColor = "#FFDDDD";
-            }
-            else if(data.data[4].immediatePercentage <= 60){
+            
               config4.circleColor = "#808015";
               config4.textColor = "#555500";
               config4.waveTextColor = "#FFFFAA";
               config4.waveColor = "#AAAA39";
-            }
+            
             loadLiquidFillGauge("fillgauge4", Number(data.data[4].immediatePercentage.replace('%','')), config4);
-
+            
             var config5 = liquidFillGaugeDefaultSettings();
+            config5.circleColor = "#FF7777";
+              config5.textColor = "#FF4444";
+              config5.waveTextColor = "#FFAAAA";
+              config5.waveColor = "#FFDDDD";
             loadLiquidFillGauge("fillgauge5", Number(data.data[5].immediatePercentage.replace('%','')), config5);
             var config6 = liquidFillGaugeDefaultSettings();
+            config6.circleColor = "#FF7777";
+              config6.textColor = "#FF4444";
+              config6.waveTextColor = "#FFAAAA";
+              config6.waveColor = "#FFDDDD";
             loadLiquidFillGauge("fillgauge6", Number(data.data[6].immediatePercentage.replace('%','')), config6);
             var config7 = liquidFillGaugeDefaultSettings();
+            config7.circleColor = "#FF7777";
+              config7.textColor = "#FF4444";
+              config7.waveTextColor = "#FFAAAA";
+              config7.waveColor = "#FFDDDD";
             loadLiquidFillGauge("fillgauge7", Number(data.data[7].immediatePercentage.replace('%','')), config7);
             var config8 = liquidFillGaugeDefaultSettings();
             loadLiquidFillGauge("fillgauge8", Number(data.data[8].immediatePercentage.replace('%','')), config8);
