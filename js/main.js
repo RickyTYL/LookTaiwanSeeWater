@@ -141,8 +141,16 @@ $(function () {
               config7.waveColor = "#FFDDDD";
             loadLiquidFillGauge("fillgauge7", Number(data.data[7].immediatePercentage.replace('%','')), config7);
             var config8 = liquidFillGaugeDefaultSettings();
+              config8.circleColor = "#808015";
+              config8.textColor = "#555500";
+              config8.waveTextColor = "#FFFFAA";
+              config8.waveColor = "#AAAA39";
             loadLiquidFillGauge("fillgauge8", Number(data.data[8].immediatePercentage.replace('%','')), config8);
             var config9 = liquidFillGaugeDefaultSettings();
+              config9.circleColor = "#808015";
+              config9.textColor = "#555500";
+              config9.waveTextColor = "#FFFFAA";
+              config9.waveColor = "#AAAA39";
             loadLiquidFillGauge("fillgauge9", Number(data.data[9].immediatePercentage.replace('%','')), config9);
             var config60 = liquidFillGaugeDefaultSettings();
             loadLiquidFillGauge("fillgauge10", Number(data.data[10].immediatePercentage.replace('%','')), config60);
