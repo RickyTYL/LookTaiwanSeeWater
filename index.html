@@ -9,11 +9,11 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-  	<!-- Facebook Meta Tag -->
-  	<meta property="og:title" content="LookTaiwan SeeWater - 1032_Software Engineering of NCCU"/>
-  	<meta property="og:image" content="http://1032se-team7.github.io/LookTaiwanSeeWater/img/bg.jpg"/>
-  	<meta property="og:site_name" content="LookTaiwan SeeWater - 1032_Software Engineering of NCCU"/>
-  	<meta property="og:description" content="We are team7 from 1032_Software Engineering of NCCU. Our purpose of project is to assist citizens in focusing on Water resource of reservoir in Taiwan"/>
+    <!-- Facebook Meta Tag -->
+    <meta property="og:title" content="LookTaiwan SeeWater - 1032_Software Engineering of NCCU"/>
+    <meta property="og:image" content="http://1032se-team7.github.io/LookTaiwanSeeWater/img/bg.jpg"/>
+    <meta property="og:site_name" content="LookTaiwan SeeWater - 1032_Software Engineering of NCCU"/>
+    <meta property="og:description" content="We are team7 from 1032_Software Engineering of NCCU. Our purpose of project is to assist citizens in focusing on Water resource of reservoir in Taiwan"/>
 
     <title>LookTaiwan SeeWater - 1032_Software Engineering of NCCU</title>
 
@@ -33,12 +33,29 @@
     <!--[if lt IE 9]>
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
+        <![endif]-->
 
-</head>
+    </head>
 
-<body>
+    <body>
+        <!-- Setup the Facebook SDK for JavaScript -->
+        <script>
+          window.fbAsyncInit = function() {
+            FB.init({
+              appId      : '922617771095082',
+              xfbml      : true,
+              version    : 'v2.3'
+          });
+        };
 
+        (function(d, s, id){
+           var js, fjs = d.getElementsByTagName(s)[0];
+           if (d.getElementById(id)) {return;}
+           js = d.createElement(s); js.id = id;
+           js.src = "//connect.facebook.net/en_US/sdk.js";
+           fjs.parentNode.insertBefore(js, fjs);
+       }(document, 'script', 'facebook-jssdk'));
+    </script>
     <!-- Navigation -->
     <a id="menu-toggle" href="#" class="btn btn-dark btn-lg toggle"><i class="fa fa-bars"></i></a>
     <nav id="sidebar-wrapper">
@@ -157,247 +174,247 @@
     <section id="about" class="about">
         <div class="container">
             <div class="row text-center">
-<!--
+                <!--
                 <div class="col-lg-12 text-center">
                     <h2>Introduction to LookTaiwanSeeWater Team</h2>
                     <p class="lead">Following paragraph is our introduction, which will be update later. <a target="_blank" href="https://www.facebook.com/groups/817680821620324/">Facebook Group</a>.</p>
                 </div>
--->
-                <div class="col-lg-12">
-                    <h2>Look for Reservoir</h2>
-                    <hr class="small">
-                    <div class="row">
-                        <div class="col-md-3 col-sm-6">
-                            <svg id="fillgauge0" height="200"></svg>
-                            <h4><strong>石門水庫(新北、桃園、新竹)</strong></h4>
-                        </div>
-                        <div class="col-md-3 col-sm-6">
-                            <svg id="fillgauge1" height="200"></svg>
-                            <h4><strong>新山水庫(基隆)</strong></h4>
-                        </div>
-                        <div class="col-md-3 col-sm-6">
-                            <svg id="fillgauge2" height="200"></svg>
-                            <h4><strong>翡翠水庫(台北、新北)</strong></h4>
-                        </div>
-                        <div class="col-md-3 col-sm-6">
-                            <svg id="fillgauge3" height="200"></svg>
-                            <h4><strong>寶山水庫(新竹)</strong></h4>
-                        </div>
-                        <div class="col-md-3 col-sm-6">
-                            <svg id="fillgauge4" height="200"></svg>
-                            <h4><strong>寶山第二水庫(新竹)</strong></h4>
-                        </div>
-                        <div class="col-md-3 col-sm-6">
-                            <svg id="fillgauge5" height="200"></svg>
-                            <h4><strong>永和山水庫(新竹、苗栗)</strong></h4>
-                        </div>
-                        <div class="col-md-3 col-sm-6">
-                            <svg id="fillgauge6" height="200"></svg>
-                            <h4><strong>明德水庫(苗栗)</strong></h4>
-                        </div>
-                        <div class="col-md-3 col-sm-6">
-                            <svg id="fillgauge7" height="200"></svg>
-                            <h4><strong>鯉魚潭水庫(苗栗、台中)</strong></h4>
-                        </div>
-                        <div class="col-md-3 col-sm-6">
-                            <svg id="fillgauge8" height="200"></svg>
-                            <h4><strong>德基水庫(台中)</strong></h4>
-                        </div>
-                        <div class="col-md-3 col-sm-6">
-                            <svg id="fillgauge9" height="200"></svg>
-                            <h4><strong>石岡壩(台中)</strong></h4>
-                        </div>
-                        <div class="col-md-3 col-sm-6">
-                            <svg id="fillgauge10" height="200"></svg>
-                            <h4><strong>霧社水庫(南投)</strong></h4>
-                        </div>
-                        <div class="col-md-3 col-sm-6">
-                            <svg id="fillgauge11" height="200"></svg>
-                            <h4><strong>日月潭水庫(南投)</strong></h4>
-                        </div>
-                        <div class="col-md-3 col-sm-6">
-                            <svg id="fillgauge12" height="200"></svg>
-                            <h4><strong>仁義潭水庫(嘉義)</strong></h4>
-                        </div>
-                        <div class="col-md-3 col-sm-6">
-                            <svg id="fillgauge13" height="200"></svg>
-                            <h4><strong>蘭潭水庫(嘉義)</strong></h4>
-                        </div>
-                        <div class="col-md-3 col-sm-6">
-                            <svg id="fillgauge14" height="200"></svg>
-                            <h4><strong>烏山頭水庫(台南)</strong></h4>
-                        </div>
-                        <div class="col-md-3 col-sm-6">
-                            <svg id="fillgauge15" height="200"></svg>
-                            <h4><strong>曾文水庫(嘉義、台南)</strong></h4>
-                        </div>
-                        <div class="col-md-3 col-sm-6">
-                            <svg id="fillgauge16" height="200"></svg>
-                            <h4><strong>南化水庫(台南、高雄)</strong></h4>
-                        </div>
-                        <div class="col-md-3 col-sm-6">
-                            <svg id="fillgauge17" height="200"></svg>
-                            <h4><strong>阿公店水庫(高雄)</strong></h4>
-                        </div>
-                        <div class="col-md-3 col-sm-6">
-                            <svg id="fillgauge18" height="200"></svg>
-                            <h4><strong>阿公店水庫(高雄、洩洪至二仁溪)</strong></h4>
-                        </div>
-                        <div class="col-md-3 col-sm-6">
-                            <svg id="fillgauge19" height="200"></svg>
-                            <h4><strong>牡丹水庫(屏東)</strong></h4>
-                        </div>
-                        <div class="col-md-3 col-sm-6">
-                            <svg id="fillgauge20" height="200"></svg>
-                            <h4><strong>成功水庫(澎湖)</strong></h4>
-                        </div>
+            -->
+            <div class="col-lg-12">
+                <h2>Look for Reservoir</h2>
+                <hr class="small">
+                <div class="row">
+                    <div class="col-md-3 col-sm-6">
+                        <svg id="fillgauge0" height="200"></svg>
+                        <h4><strong>石門水庫(新北、桃園、新竹)</strong></h4>
+                    </div>
+                    <div class="col-md-3 col-sm-6">
+                        <svg id="fillgauge1" height="200"></svg>
+                        <h4><strong>新山水庫(基隆)</strong></h4>
+                    </div>
+                    <div class="col-md-3 col-sm-6">
+                        <svg id="fillgauge2" height="200"></svg>
+                        <h4><strong>翡翠水庫(台北、新北)</strong></h4>
+                    </div>
+                    <div class="col-md-3 col-sm-6">
+                        <svg id="fillgauge3" height="200"></svg>
+                        <h4><strong>寶山水庫(新竹)</strong></h4>
+                    </div>
+                    <div class="col-md-3 col-sm-6">
+                        <svg id="fillgauge4" height="200"></svg>
+                        <h4><strong>寶山第二水庫(新竹)</strong></h4>
+                    </div>
+                    <div class="col-md-3 col-sm-6">
+                        <svg id="fillgauge5" height="200"></svg>
+                        <h4><strong>永和山水庫(新竹、苗栗)</strong></h4>
+                    </div>
+                    <div class="col-md-3 col-sm-6">
+                        <svg id="fillgauge6" height="200"></svg>
+                        <h4><strong>明德水庫(苗栗)</strong></h4>
+                    </div>
+                    <div class="col-md-3 col-sm-6">
+                        <svg id="fillgauge7" height="200"></svg>
+                        <h4><strong>鯉魚潭水庫(苗栗、台中)</strong></h4>
+                    </div>
+                    <div class="col-md-3 col-sm-6">
+                        <svg id="fillgauge8" height="200"></svg>
+                        <h4><strong>德基水庫(台中)</strong></h4>
+                    </div>
+                    <div class="col-md-3 col-sm-6">
+                        <svg id="fillgauge9" height="200"></svg>
+                        <h4><strong>石岡壩(台中)</strong></h4>
+                    </div>
+                    <div class="col-md-3 col-sm-6">
+                        <svg id="fillgauge10" height="200"></svg>
+                        <h4><strong>霧社水庫(南投)</strong></h4>
+                    </div>
+                    <div class="col-md-3 col-sm-6">
+                        <svg id="fillgauge11" height="200"></svg>
+                        <h4><strong>日月潭水庫(南投)</strong></h4>
+                    </div>
+                    <div class="col-md-3 col-sm-6">
+                        <svg id="fillgauge12" height="200"></svg>
+                        <h4><strong>仁義潭水庫(嘉義)</strong></h4>
+                    </div>
+                    <div class="col-md-3 col-sm-6">
+                        <svg id="fillgauge13" height="200"></svg>
+                        <h4><strong>蘭潭水庫(嘉義)</strong></h4>
+                    </div>
+                    <div class="col-md-3 col-sm-6">
+                        <svg id="fillgauge14" height="200"></svg>
+                        <h4><strong>烏山頭水庫(台南)</strong></h4>
+                    </div>
+                    <div class="col-md-3 col-sm-6">
+                        <svg id="fillgauge15" height="200"></svg>
+                        <h4><strong>曾文水庫(嘉義、台南)</strong></h4>
+                    </div>
+                    <div class="col-md-3 col-sm-6">
+                        <svg id="fillgauge16" height="200"></svg>
+                        <h4><strong>南化水庫(台南、高雄)</strong></h4>
+                    </div>
+                    <div class="col-md-3 col-sm-6">
+                        <svg id="fillgauge17" height="200"></svg>
+                        <h4><strong>阿公店水庫(高雄)</strong></h4>
+                    </div>
+                    <div class="col-md-3 col-sm-6">
+                        <svg id="fillgauge18" height="200"></svg>
+                        <h4><strong>阿公店水庫(高雄、洩洪至二仁溪)</strong></h4>
+                    </div>
+                    <div class="col-md-3 col-sm-6">
+                        <svg id="fillgauge19" height="200"></svg>
+                        <h4><strong>牡丹水庫(屏東)</strong></h4>
+                    </div>
+                    <div class="col-md-3 col-sm-6">
+                        <svg id="fillgauge20" height="200"></svg>
+                        <h4><strong>成功水庫(澎湖)</strong></h4>
                     </div>
                 </div>
             </div>
-            <!-- /.row -->
         </div>
-        <!-- /.container -->
-    </section>
+        <!-- /.row -->
+    </div>
+    <!-- /.container -->
+</section>
 
-    <!-- Services -->
-    <!-- The circle icons use Font Awesome's stacked icon classes. For more information, visit http://fontawesome.io/examples/ -->
-    <section id="services" class="services bg-primary">
-        <div class="container">
-            <div class="row text-center">
-                <div class="col-lg-10 col-lg-offset-1">
-                    <h2>Look for Clear Water</h2>
-                    <hr class="small">
-                    <div class="row">
-                        <div class="col-md-3 col-sm-6">
-                            <div class="service-item">
-                                <span class="fa-stack fa-4x">
+<!-- Services -->
+<!-- The circle icons use Font Awesome's stacked icon classes. For more information, visit http://fontawesome.io/examples/ -->
+<section id="services" class="services bg-primary">
+    <div class="container">
+        <div class="row text-center">
+            <div class="col-lg-10 col-lg-offset-1">
+                <h2>Look for Clear Water</h2>
+                <hr class="small">
+                <div class="row">
+                    <div class="col-md-3 col-sm-6">
+                        <div class="service-item">
+                            <span class="fa-stack fa-4x">
                                 <i class="fa fa-circle fa-stack-2x"></i>
                                 <i class="fa fa-cloud fa-stack-1x text-primary"></i>
                             </span>
-                                <h4>
-                                    <strong>Summary of Reservoir</strong>
-                                </h4>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                                <a href="#" class="btn btn-light">Learn More</a>
-                            </div>
+                            <h4>
+                                <strong>Summary of Reservoir</strong>
+                            </h4>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                            <a href="#" class="btn btn-light">Learn More</a>
                         </div>
-                        <div class="col-md-3 col-sm-6">
-                            <div class="service-item">
-                                <span class="fa-stack fa-4x">
+                    </div>
+                    <div class="col-md-3 col-sm-6">
+                        <div class="service-item">
+                            <span class="fa-stack fa-4x">
                                 <i class="fa fa-circle fa-stack-2x"></i>
                                 <i class="fa fa-compass fa-stack-1x text-primary"></i>
                             </span>
-                                <h4>
-                                    <strong>Detail of Reservoir</strong>
-                                </h4>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                                <a href="#" class="btn btn-light">Learn More</a>
-                            </div>
+                            <h4>
+                                <strong>Detail of Reservoir</strong>
+                            </h4>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                            <a href="#" class="btn btn-light">Learn More</a>
                         </div>
-                        <div class="col-md-3 col-sm-6">
-                            <div class="service-item">
-                                <span class="fa-stack fa-4x">
+                    </div>
+                    <div class="col-md-3 col-sm-6">
+                        <div class="service-item">
+                            <span class="fa-stack fa-4x">
                                 <i class="fa fa-circle fa-stack-2x"></i>
                                 <i class="fa fa-flask fa-stack-1x text-primary"></i>
                             </span>
-                                <h4>
-                                    <strong>Metaphor of Water Volume</strong>
-                                </h4>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                                <a href="#" class="btn btn-light">Learn More</a>
-                            </div>
+                            <h4>
+                                <strong>Metaphor of Water Volume</strong>
+                            </h4>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                            <a href="#" class="btn btn-light">Learn More</a>
                         </div>
-                        <div class="col-md-3 col-sm-6">
-                            <div class="service-item">
-                                <span class="fa-stack fa-4x">
+                    </div>
+                    <div class="col-md-3 col-sm-6">
+                        <div class="service-item">
+                            <span class="fa-stack fa-4x">
                                 <i class="fa fa-circle fa-stack-2x"></i>
                                 <i class="fa fa-shield fa-stack-1x text-primary"></i>
                             </span>
-                                <h4>
-                                    <strong>Suggestion of Our Analysis</strong>
-                                </h4>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                                <a href="#" class="btn btn-light">Learn More</a>
-                            </div>
+                            <h4>
+                                <strong>Suggestion of Our Analysis</strong>
+                            </h4>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                            <a href="#" class="btn btn-light">Learn More</a>
                         </div>
                     </div>
-                    <!-- /.row (nested) -->
                 </div>
-                <!-- /.col-lg-10 -->
+                <!-- /.row (nested) -->
             </div>
-            <!-- /.row -->
+            <!-- /.col-lg-10 -->
         </div>
-        <!-- /.container -->
-    </section>
+        <!-- /.row -->
+    </div>
+    <!-- /.container -->
+</section>
 
-    <!-- Callout -->
-    <aside class="callout">
-        <div class="text-vertical-center">
-            <h1>Videos of Each Reservoir Status</h1>
-        </div>
-    </aside>
+<!-- Callout -->
+<aside class="callout">
+    <div class="text-vertical-center">
+        <h1>Videos of Each Reservoir Status</h1>
+    </div>
+</aside>
 
-    <!-- Portfolio -->
-    <section id="portfolio" class="portfolio">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-10 col-lg-offset-1 text-center">
-                    <h2>Our Work</h2>
-                    <hr class="small">
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="portfolio-item">
-                                <a href="#">
-                                    <img class="img-portfolio img-responsive" src="img/portfolio-1.jpg">
-                                </a>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="portfolio-item">
-                                <a href="#">
-                                    <img class="img-portfolio img-responsive" src="img/portfolio-2.jpg">
-                                </a>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="portfolio-item">
-                                <a href="#">
-                                    <img class="img-portfolio img-responsive" src="img/portfolio-3.jpg">
-                                </a>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="portfolio-item">
-                                <a href="#">
-                                    <img class="img-portfolio img-responsive" src="img/portfolio-4.jpg">
-                                </a>
-                            </div>
+<!-- Portfolio -->
+<section id="portfolio" class="portfolio">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-10 col-lg-offset-1 text-center">
+                <h2>Our Work</h2>
+                <hr class="small">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="portfolio-item">
+                            <a href="#">
+                                <img class="img-portfolio img-responsive" src="img/portfolio-1.jpg">
+                            </a>
                         </div>
                     </div>
-                    <!-- /.row (nested) -->
-                    <a href="#" class="btn btn-dark">View More Items</a>
+                    <div class="col-md-6">
+                        <div class="portfolio-item">
+                            <a href="#">
+                                <img class="img-portfolio img-responsive" src="img/portfolio-2.jpg">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="portfolio-item">
+                            <a href="#">
+                                <img class="img-portfolio img-responsive" src="img/portfolio-3.jpg">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="portfolio-item">
+                            <a href="#">
+                                <img class="img-portfolio img-responsive" src="img/portfolio-4.jpg">
+                            </a>
+                        </div>
+                    </div>
                 </div>
-                <!-- /.col-lg-10 -->
+                <!-- /.row (nested) -->
+                <a href="#" class="btn btn-dark">View More Items</a>
             </div>
-            <!-- /.row -->
+            <!-- /.col-lg-10 -->
         </div>
-        <!-- /.container -->
-    </section>
+        <!-- /.row -->
+    </div>
+    <!-- /.container -->
+</section>
 
-    <!-- Call to Action -->
-    <aside class="call-to-action bg-primary">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h3>The more relevant resource of Internet is on below:</h3>
-                    <a target="_blank" href="http://www.wra.gov.tw" class="btn btn-lg btn-light">經濟部水利署</a>
-                    <a target="_blank" href="http://water.taiwanstat.com" class="btn btn-lg btn-dark">用數據看台灣</a>
-                </div>
+<!-- Call to Action -->
+<aside class="call-to-action bg-primary">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h3>The more relevant resource of Internet is on below:</h3>
+                <a target="_blank" href="http://www.wra.gov.tw" class="btn btn-lg btn-light">經濟部水利署</a>
+                <a target="_blank" href="http://water.taiwanstat.com" class="btn btn-lg btn-dark">用數據看台灣</a>
             </div>
         </div>
-    </aside>
+    </div>
+</aside>
 
-    <!-- Map -->
+<!-- Map -->
 <!--
     <section id="contact" class="map">
         <iframe width="100%" height="100%" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=Twitter,+Inc.,+Market+Street,+San+Francisco,+CA&amp;aq=0&amp;oq=twitter&amp;sll=28.659344,-81.187888&amp;sspn=0.128789,0.264187&amp;ie=UTF8&amp;hq=Twitter,+Inc.,+Market+Street,+San+Francisco,+CA&amp;t=m&amp;z=15&amp;iwloc=A&amp;output=embed"></iframe>
@@ -409,57 +426,62 @@
     </section>
 -->
 
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-10 col-lg-offset-1 text-center">
-                    <h4><strong>LookTaiwanSeeWater</strong>
-                    </h4>
-                    <p>National Chengchi University<br>NO.64,Sec.2,ZhiNan Rd.,Wenshan District,Taipei City 11605,Taiwan (R.O.C)</p>
-                    <ul class="list-unstyled">
-                        <li><i class="fa fa-phone fa-fw"></i> (123) 456-7890</li>
-                        <li><i class="fa fa-envelope-o fa-fw"></i>  <a href="mailto:1032se.team7@gmail.com">1032se.team7@gmail.com</a>
-                        </li>
-                    </ul>
-                    <br>
-                    <ul class="list-inline">
-                        <li>
-                            <a href="https://www.facebook.com/groups/817680821620324/"><i class="fa fa-facebook fa-fw fa-3x"></i></a>
-                        </li>
-                        <li>
-                            <a href="#"><i class="fa fa-twitter fa-fw fa-3x"></i></a>
-                        </li>
-                        <li>
-                            <a href="#"><i class="fa fa-dribbble fa-fw fa-3x"></i></a>
-                        </li>
-                    </ul>
-                    <hr class="small">
-                    <p class="text-muted">Copyright &copy; LookTaiwanSeeWater Website 2015</p>
-                    <p class="text-muted">Copyright 2013-2015 Iron Summit Media Strategies, LLC. Code released under the Apache 2.0 license.</p>
-                </div>
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-10 col-lg-offset-1 text-center">
+                <h4><strong>LookTaiwanSeeWater</strong>
+                </h4>
+                <p>National Chengchi University<br>NO.64,Sec.2,ZhiNan Rd.,Wenshan District,Taipei City 11605,Taiwan (R.O.C)</p>
+                <ul class="list-unstyled">
+                    <li><i class="fa fa-phone fa-fw"></i> (123) 456-7890</li>
+                    <li><i class="fa fa-envelope-o fa-fw"></i>  <a href="mailto:1032se.team7@gmail.com">1032se.team7@gmail.com</a>
+                    </li>
+                </ul>
+                <br>
+                <ul class="list-inline">
+                    <li>
+                        <a href="https://www.facebook.com/groups/817680821620324/"><i class="fa fa-facebook fa-fw fa-3x"></i></a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa fa-twitter fa-fw fa-3x"></i></a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa fa-dribbble fa-fw fa-3x"></i></a>
+                    </li>
+                </ul>
+                <div
+                class="fb-like"
+                data-share="true"
+                data-width="450"
+                data-show-faces="true"></div>
+                <hr class="small">
+                <p class="text-muted">Copyright &copy; LookTaiwanSeeWater Website 2015</p>
+                <p class="text-muted">Copyright 2013-2015 Iron Summit Media Strategies, LLC. Code released under the Apache 2.0 license.</p>
             </div>
         </div>
-    </footer>
+    </div>
+</footer>
 
-    <!-- jQuery -->
-    <script src="js/jquery.js"></script>
+<!-- jQuery -->
+<script src="js/jquery.js"></script>
 
-    <!-- Bootstrap Core JavaScript -->
-    <script src="js/bootstrap.min.js"></script>
+<!-- Bootstrap Core JavaScript -->
+<script src="js/bootstrap.min.js"></script>
 
-    <!-- Custom Theme JavaScript -->
-    <script src="js/main.js"></script>
+<!-- Custom Theme JavaScript -->
+<script src="js/main.js"></script>
 
-    <script src="http://d3js.org/d3.v3.min.js"></script>
-    <script src="js/liquidFillGauge.js"></script>
+<script src="http://d3js.org/d3.v3.min.js"></script>
+<script src="js/liquidFillGauge.js"></script>
 
-    <!-- Script to Activate the Carousel -->
-    <script>
+<!-- Script to Activate the Carousel -->
+<script>
     $('.carousel').carousel({
         interval: 5000 //changes the speed
     })
-    </script>
+</script>
 
 </body>
 
