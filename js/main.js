@@ -80,7 +80,7 @@ $(function () {
                     config.waveCount = 1;
                   // loadLiquidFillGauge('fillgauge'+i, Number(data.data[i].immediatePercentage.replace('%','')), config);
                   loadLiquidFillGauge('fillgauge'+i, Number(data.data[i].immediateStorage.replace('%','')), config);
-                  document.getElementById("demo").innerHTML = data.data[i].reservoirName; 
+                /*  document.getElementById("demo").innerHTML = data.data[i].reservoirName; */
             };
             // var config1 = liquidFillGaugeDefaultSettings();
             // if(data.data[1].immediatePercentage.replace('%','') <= 30){
