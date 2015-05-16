@@ -39,7 +39,7 @@
 
     </head>
 
-    <body class="container">
+    <body>
         <!-- Setup the Facebook SDK for JavaScript -->
         <div id="fb-root"></div>
         <script>(function(d, s, id) {
@@ -168,22 +168,24 @@
     <!-- Reservoir -->
     <section id="about" class="about">
         <div class="container">
-            <div class="row text-center">
+            <div class="row text-center col-lg-12">
+                    <h2>Look for Reservoir</h2>
+                    <hr class="small">
             <!--
                 <div class="col-lg-12 text-center">
                     <h2>Introduction to LookTaiwanSeeWater Team</h2>
                     <p class="lead">Following paragraph is our introduction, which will be update later. <a target="_blank" href="https://www.facebook.com/groups/817680821620324/">Facebook Group</a>.</p>
                 </div>
             -->
-                <div class="col-lg-12">
-                    <h2>Look for Reservoir</h2>
-                    <hr class="small">
+                <nav class="row">
                     <ul class="nav nav-tabs">
                       <li class="active"><a href="#tab_a" data-toggle="tab">台灣北</a></li>
                       <li><a href="#tab_b" data-toggle="tab">台灣中</a></li>
                       <li><a href="#tab_c" data-toggle="tab">台灣南</a></li>
                     </ul>
-                    <div class="tab-content">
+                </nav>
+                
+                    <div class="row tab-content">
                             <div class="tab-pane fade active" id="tab_a">
                                 <br><br>
                                     <div class="col-md-3 col-sm-6">
@@ -275,9 +277,7 @@
                                     </div>
                             </div>
                     </div><!-- tab content -->
-                </div><!-- end of container -->
-            
-            </div><!-- /.row -->
+            </div><!-- end of row -->
         </div><!-- /.container -->
 </section>
 
