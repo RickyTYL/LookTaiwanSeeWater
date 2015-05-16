@@ -41,7 +41,7 @@ function waterFeeFuncOne(){
 		waterFee1 = waterConsumption * 7.6 - 1294;
 	}
 	waterFee5 = waterFee1 / 1.05 * 0.1;
-	document.getElementById("waterFeeOne").innerHTML = waterFee1 + waterFee2 + waterFee5;
+	document.getElementById("totalWaterFee").innerHTML = waterFee1 + waterFee2 + waterFee5;
 
 	// Add the following html tags where we want to calculate water fee.
 	//
@@ -67,5 +67,5 @@ function waterFeeFuncOne(){
 	//	</select>
 	//
 	// 4.	show total water fee
-	//	<p id = "waterFeeOne"></p>
+	//	<p id = "totalWaterFee"></p>
 }
