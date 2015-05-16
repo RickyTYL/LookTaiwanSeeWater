@@ -69,3 +69,4 @@ function waterFeeFuncOne(){
 	// 4.	show total water fee
 	//	<p id = "totalWaterFee"></p>
 }
+
