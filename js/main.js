@@ -66,20 +66,21 @@ $(function () {
             		config.waveTextColor = "#FFAAAA";
             		config.waveColor = "#FFDDDD";
             	}                  // else if(data.data[i].immediatePercentage.replace('%','') <= 60){
-                        else if(data.data[i].immediateStorage.replace('%','') <= 60){
-                          config.circleColor = "#808015";
-                          config.textColor = "#555500";
-                          config.waveTextColor = "#FFFFAA";
-                          config.waveColor = "#AAAA39";
-                    }
-                    else {
-                          config = liquidFillGaugeDefaultSettings();
-                    }
+                  else if(data.data[i].immediateStorage.replace('%','') <= 60){
+                        config.circleColor = "#808015";
+                        config.textColor = "#555500";
+                        config.waveTextColor = "#FFFFAA";
+                        config.waveColor = "#AAAA39";
+                  }
+                  else {
+                        config = liquidFillGaugeDefaultSettings();
+                  }
                     config.waveAnimateTime = 2000;
-                    config.waveHeight = 0.3;
+                    config.waveHeight = 0.2;
                     config.waveCount = 1;
                   // loadLiquidFillGauge('fillgauge'+i, Number(data.data[i].immediatePercentage.replace('%','')), config);
                   loadLiquidFillGauge('fillgauge'+i, Number(data.data[i].immediateStorage.replace('%','')), config);
+                  document.getElementById("demo").innerHTML = data.data[i].reservoirName; 
             };
             // var config1 = liquidFillGaugeDefaultSettings();
             // if(data.data[1].immediatePercentage.replace('%','') <= 30){
