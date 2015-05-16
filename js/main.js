@@ -58,7 +58,7 @@ $(function () {
             //data.data[18] 牡丹水庫(屏東)
 
             var config = liquidFillGaugeDefaultSettings();
-            for (var i = 0; i < data.data.length; i++) {
+            for (var i = 0; i < 19; i++) {
                   if(data.data[i].immediateStorage.replace('%','') <= 30){
             	// if(data.data[i].immediatePercentage.replace('%','') <= 30){
             		config.circleColor = "#FF7777";
