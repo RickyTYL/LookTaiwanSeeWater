@@ -40,8 +40,9 @@ function waterFeeFuncOne(){
 	else if (waterConsumption >= 1001){
 		waterFee1 = waterConsumption * 7.6 - 1294;
 	}
+	waterFee4 = waterConsumption * 5;
 	waterFee5 = waterFee1 / 1.05 * 0.1;
-	document.getElementById("totalWaterFee").innerHTML = waterFee1 + waterFee2 + waterFee5;
+	document.getElementById("totalWaterFee").innerHTML = waterFee1 + waterFee2 + waterFee4 + waterFee5;
 
 	// Add the following html tags where we want to calculate water fee.
 	//
