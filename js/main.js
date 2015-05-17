@@ -88,14 +88,17 @@ $(function () {
              
             };
             
-               //if(data.data[i].immediateStorage.replace('%','') <= 30){
+               
 		  $('.normalclass').on('click', function(){
 		  // 把下面內容塞進 DOM
-		  var picture = 'fillgauge'+i;
-		  
-		  $('<div class="col-md-3 col-sm-6"><svg id="fillgauge0" height="200"></svg><h4><strong>' + data.data[0].reservoirName + '</strong></h4></div>').appendTo('#tab_d');
-		  });
-                //}
+		  for (var i = 0; i < 19; i++) {
+		    if(data.data[i].immediateStorage.replace('%','') <= 30){
+		      var picture = 'fillgauge'+i;
+		      $('<div class="col-md-3 col-sm-6"><svg id="fillgauge0" height="200"></svg><h4><strong>' + data.data[i].reservoirName + '</strong></h4></div>').appendTo('#tab_d');
+		    }
+		  };
+                  });
+                  
         	}
 });
 });
