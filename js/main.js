@@ -89,7 +89,8 @@ $(function () {
                 if(data.data[i].immediateStorage.replace('%','') <= 30){
 		  $('.normalid').on('click', function(){
 		  // 把下面內容塞進 DOM
-		  $('<svg id="'fillgauge'+i" height="200"></svg><h4><strong>data.data[i].reservoirName</strong></h4>').appendTo('#normal');
+		  var picture = 'fillgauge'+i;
+		  $('<svg id="picture" height="200"></svg><h4><strong>data.data[i].reservoirName</strong></h4>').appendTo('#normal');
 		  });
                 }
                 
