@@ -190,6 +190,9 @@
                       <li class="active"><a href="#tab_a" data-toggle="tab">北台灣</a></li>
                       <li><a href="#tab_b" data-toggle="tab">中台灣</a></li>
                       <li><a href="#tab_c" data-toggle="tab">南台灣</a></li>
+                      <li><a href="#tab_d" data-toggle="tab">正常(Volume>70%)</a></li>
+                      <li><a href="#tab_e" data-toggle="tab">警告(70%>Volume>30%)</a></li>
+                      <li><a href="#tab_f" data-toggle="tab">嚴重(Volume<30%)</a></li>
                     </ul>
                 </nav>
                 
@@ -279,6 +282,21 @@
                                         <svg id="fillgauge18" height="200"></svg>
                                         <h4><strong>牡丹水庫(屏東)</strong></h4>
                                     </div>
+                            </div>
+                            <div class="tab-pane fade active" id="tab_d">
+                                <br><br>
+                                <div id="normal" class="col-md-3 col-sm-6">
+                                </div>
+                            </div>
+                            <div class="tab-pane fade active" id="tab_e">
+                                <br><br>
+                                <div id="warning" class="col-md-3 col-sm-6">
+                                </div>
+                            </div>
+                            <div class="tab-pane fade active" id="tab_f">
+                                <br><br>
+                                <div id="danger" class="col-md-3 col-sm-6">
+                                </div>
                             </div>
                     </div><!-- tab content -->
             </div><!-- end of row -->
