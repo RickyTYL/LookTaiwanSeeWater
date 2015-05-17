@@ -23,7 +23,7 @@ function TaipeiWaterFee(){
 
 	waterFee2 = parseFloat(document.getElementById("TPMeterSize").value)
 	
-	waterConsumption = parseFloat(document.getElementById("waterConsumption").value;)
+	waterConsumption = parseFloat(document.getElementById("waterConsumption").value);
 	
 	if (waterConsumption <= 20) {
 		waterFee1 = waterConsumption * 5;
@@ -42,7 +42,7 @@ function TaipeiWaterFee(){
 	}
 	waterFee4 = waterConsumption * 5;
 	waterFee5 = waterFee1 / 1.05 * 0.1;
-	document.getElementById("TPWaterFee").innerHTML = waterFee1 + waterFee2 + waterFee4 + waterFee5;
+	document.getElementById("TPWaterFee").innerHTML = parseInt(waterFee1 + waterFee2 + waterFee4 + waterFee5);
 
 	// Add the following html tags to where we want to calculate water fee.
 	//
