@@ -91,7 +91,7 @@ $(function () {
 		  // 把下面內容塞進 DOM
 		  var picture = 'fillgauge'+i;
 		  
-		  $('<div class="col-md-3 col-sm-6"><svg id="fillgauge3" height="200"></svg><h4><strong>data.data[3].reservoirName</strong></h4></div>').appendTo('#tab_d');
+		  $('<div class="col-md-3 col-sm-6"><svg id="fillgauge3" height="200"></svg><h4><strong>' + data.data[3].reservoirName + '</strong></h4></div>').appendTo('#tab_d');
 		  });
                 //}
             };
