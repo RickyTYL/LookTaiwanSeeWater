@@ -21,7 +21,7 @@ function TaipeiWaterFee(){
 
 	var waterConsumption,waterFee1,waterFee2,waterFee3,waterFee4,waterFee5,waterFee6;
 
-	waterFee2 = parseFloat(document.getElementById("meterSize").value)
+	waterFee2 = parseFloat(document.getElementById("TPMeterSize").value)
 	
 	waterConsumption = parseFloat(document.getElementById("waterConsumption").value;)
 	
@@ -42,7 +42,7 @@ function TaipeiWaterFee(){
 	}
 	waterFee4 = waterConsumption * 5;
 	waterFee5 = waterFee1 / 1.05 * 0.1;
-	document.getElementById("totalWaterFee").innerHTML = waterFee1 + waterFee2 + waterFee4 + waterFee5;
+	document.getElementById("TPWaterFee").innerHTML = waterFee1 + waterFee2 + waterFee4 + waterFee5;
 
 	// Add the following html tags to where we want to calculate water fee.
 	//
@@ -53,7 +53,7 @@ function TaipeiWaterFee(){
 	//	<button onclick = "TaipeiWaterFee()">How much did you use? (cubic meter)</button>
 	//
 	// 3.	// drop-down list, value in there represent meter size
-	//	<select id = "meterSize">
+	//	<select id = "TPMeterSize">
 	//		<option value = "17" >13</option>
 	//		<option value = "68" >20</option>
 	//		<option value = "126" >25</option>
@@ -68,6 +68,6 @@ function TaipeiWaterFee(){
 	//	</select>
 	//
 	// 4.	// show total water fee
-	//	<p id = "totalWaterFee"></p>
+	//	<p id = "TPWaterFee"></p>
 }
 
