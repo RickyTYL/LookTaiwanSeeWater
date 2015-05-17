@@ -86,13 +86,14 @@ $(function () {
                   loadLiquidFillGauge('fillgauge'+i, Number(data.data[i].immediateStorage.replace('%','')), config);
                 /*  document.getElementById("demo").innerHTML = data.data[i].reservoirName; */
                 
-                if(data.data[i].immediateStorage.replace('%','') <= 30){
+                //if(data.data[i].immediateStorage.replace('%','') <= 30){
 		  $('.normalid').on('click', function(){
 		  // 把下面內容塞進 DOM
 		  var picture = 'fillgauge'+i;
-		  $('<svg id="picture" height="200"></svg><h4><strong>data.data[i].reservoirName</strong></h4>').appendTo('#normal');
+		  
+		  $('<div class="col-md-3 col-sm-6"><svg id="fillgauge5" height="200"></svg><h4><strong>data.data[5].reservoirName</strong></h4></div>').appendTo('#normal');
 		  });
-                }
+                //}
                 
             };
         	}
