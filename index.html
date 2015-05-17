@@ -108,9 +108,24 @@
                                 <i class="fa fa-cloud fa-stack-1x text-primary"></i>
                             </span>
                                 <h4>
-                                    <strong>Summary of Reservoir</strong>
+                                    <strong>Calculate Your Water Fee</strong>
                                 </h4>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                                <input id = "waterConsumption" value = "0" />
+                                <button onclick = "TaipeiWaterFee()">How much did you use? (cubic meter)</button>
+                                <select id = "TPMeterSize">
+                                    <option value = "17" >13</option>
+                                    <option value = "68" >20</option>
+                                    <option value = "126" >25</option>
+                                    <option value = "374" >40</option>
+                                    <option value = "680" >50</option>
+                                    <option value = "1836" >75</option>
+                                    <option value = "3638" >100</option>
+                                    <option value = "10098" >150</option>
+                                    <option value = "20060" >200</option>
+                                    <option value = "35428" >250</option>
+                                    <option value = "55590" >300up</option>
+                                </select>
+                                <p id = "TPWaterFee"></p>
                                 <a href="#" class="btn btn-light">Learn More</a>
                             </div>
                         </div>
