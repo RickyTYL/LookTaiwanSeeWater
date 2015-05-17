@@ -1,5 +1,5 @@
 
-function waterFeeFuncOne(){
+function TaipeiWaterFee(){
 	
 	// Total water fee is the sum of 6 items.
 	//
@@ -44,15 +44,15 @@ function waterFeeFuncOne(){
 	waterFee5 = waterFee1 / 1.05 * 0.1;
 	document.getElementById("totalWaterFee").innerHTML = waterFee1 + waterFee2 + waterFee4 + waterFee5;
 
-	// Add the following html tags where we want to calculate water fee.
+	// Add the following html tags to where we want to calculate water fee.
 	//
-	// 1.	input water consumption area      
+	// 1.	// input water consumption area      
 	//	<input id = "waterConsumption" value = "25" />
 	//
-	// 2.	button which call this function		
-	//	<button onclick = "waterFeeFuncOne()">How much did you use? (cubic meter)</button>
+	// 2.	// button which call TaipeiWaterFee() function		
+	//	<button onclick = "TaipeiWaterFee()">How much did you use? (cubic meter)</button>
 	//
-	// 3.	drop-down list, value in there represent meter size
+	// 3.	// drop-down list, value in there represent meter size
 	//	<select id = "meterSize">
 	//		<option value = "17" >13</option>
 	//		<option value = "68" >20</option>
@@ -67,7 +67,7 @@ function waterFeeFuncOne(){
 	//		<option value = "55590" >300up</option>
 	//	</select>
 	//
-	// 4.	show total water fee
+	// 4.	// show total water fee
 	//	<p id = "totalWaterFee"></p>
 }
 
