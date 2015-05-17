@@ -61,44 +61,51 @@ $(function () {
             //data.data[18] 牡丹水庫(屏東)
 
             var config = liquidFillGaugeDefaultSettings();
+            var j=100;
             for (var i = 0; i < 19; i++) {
                   // if(data.data[i].immediatePercentage.replace('%','') <= 30){
-                  if(data.data[i].immediateStorage.replace('%','') <= 30){
-            	
-            		config.circleColor = "#FF7777";
-            		config.textColor = "#FF4444";
-            		config.waveTextColor = "#FFAAAA";
-            		config.waveColor = "#FFDDDD";
+                        if(data.data[i].immediateStorage.replace('%','') <= 30){
+
+                            config.circleColor = "#FF7777";
+                            config.textColor = "#FF4444";
+                            config.waveTextColor = "#FFAAAA";
+                            config.waveColor = "#FFDDDD";
+                            $('<div class="col-md-3 col-sm-6"><svg id="fillgauge'+j+'" ;height="200"></svg><h4><strong>' + data.data[i].reservoirName + '</strong></h4></div>').appendTo('#tab_f');
+
             	} // else if(data.data[i].immediatePercentage.replace('%','') <= 60){
-                  else if(data.data[i].immediateStorage.replace('%','') <= 60){
-                        config.circleColor = "#808015";
-                        config.textColor = "#555500";
-                        config.waveTextColor = "#FFFFAA";
-                        config.waveColor = "#AAAA39";
-                  }
-                  else {
-                        config = liquidFillGaugeDefaultSettings();
-                  }
-                    config.waveAnimateTime = 2000;
-                    config.waveHeight = 0.2;
-                    config.waveCount = 1;
+                        else if(data.data[i].immediateStorage.replace('%','') <= 60){
+                              config.circleColor = "#808015";
+                              config.textColor = "#555500";
+                              config.waveTextColor = "#FFFFAA";
+                              config.waveColor = "#AAAA39";
+                              $('<div class="col-md-3 col-sm-6"><svg id="fillgauge'+j+'" ;height="200"></svg><h4><strong>' + data.data[i].reservoirName + '</strong></h4></div>').appendTo('#tab_e');
+
+                        }
+                        else {
+                              config = liquidFillGaugeDefaultSettings();
+                              $('<div class="col-md-3 col-sm-6"><svg id="fillgauge'+j+'" ;height="200"></svg><h4><strong>' + data.data[i].reservoirName + '</strong></h4></div>').appendTo('#tab_d');
+
+                        }
+                        config.waveAnimateTime = 2000;
+                        config.waveHeight = 0.2;
+                        config.waveCount = 1;
                   // loadLiquidFillGauge('fillgauge'+i, Number(data.data[i].immediatePercentage.replace('%','')), config);
                   loadLiquidFillGauge('fillgauge'+i, Number(data.data[i].immediateStorage.replace('%','')), config);
-                /*  document.getElementById("demo").innerHTML = data.data[i].reservoirName; */
-             
+                  loadLiquidFillGauge('fillgauge'+j++, Number(data.data[i].immediateStorage.replace('%','')), config);
+
+                  /*  document.getElementById("demo").innerHTML = data.data[i].reservoirName; */
+                  
+
             };
             
-               
-		  $('.normalclass').on('click', function(){
-		  // 把下面內容塞進 DOM
-		  for (var i = 0; i < 19; i++) {
-		    if(data.data[i].immediateStorage.replace('%','') <= 30){
-		      var picture = 'fillgauge'+i;
-		      $('<div class="col-md-3 col-sm-6"><svg id="fillgauge0" height="200"></svg><h4><strong>' + data.data[i].reservoirName + '</strong></h4></div>').appendTo('#tab_d');
-		    }
-		  };
-                  });
-                  
-        	}
-});
+               //if(data.data[i].immediateStorage.replace('%','') <= 30){
+		  // $('.normalclass').on('click', function(){
+		  // // 把下面內容塞進 DOM
+		  // var picture = 'fillgauge'+i;
+		  
+		  // $('<div class="col-md-3 col-sm-6"><svg id="fillgauge0" height="200"></svg><h4><strong>' + data.data[0].reservoirName + '</strong></h4></div>').appendTo('#tab_d');
+		  // });
+                //}
+          }
+    });
 });
