@@ -1,17 +1,17 @@
-var reservoirData;
 // Closes the sidebar menu
 $("#menu-close").click(function (e) {
-    e.preventDefault();
-    $("#sidebar-wrapper").toggleClass("active");
+	e.preventDefault();
+	$("#sidebar-wrapper").toggleClass("active");
 });
 
 // Opens the sidebar menu
 $("#menu-toggle").click(function (e) {
-    e.preventDefault();
-    $("#sidebar-wrapper").toggleClass("active");
+	e.preventDefault();
+	$("#sidebar-wrapper").toggleClass("active");
 });
 
 // Scrolls to the selected menu item on the page
+/*
 $(function () {
     $('a[href*=#]:not([href=#])').click(function () {
         if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') || location.hostname == this.hostname) {
@@ -27,97 +27,85 @@ $(function () {
         }
     });
 });
+*/
 
 //ajax get water reservoir data
 $(function () {
-    $.ajax({
-        type: "GET",
-        url: "http://128.199.223.114:10080/today",
-        dataType: "jsonp",
-        success: function (data) {
+	$.ajax({
+		type: "GET",
+		url: "http://128.199.223.114:10080",
+		dataType: "jsonp",
+		success: function (data) {
+
+            //data.data[0] 石門水庫(新北、桃園、新竹)
+            ////data.data[1] 新山水庫(基隆)
+            //data.data[1] 翡翠水庫(台北、新北)
+            ////data.data[3] 寶山水庫(新竹)
+            //data.data[2] 寶山第二水庫(新竹)
+            //data.data[3] 永和山水庫(新竹、苗栗)
+            //data.data[4] 明德水庫(苗栗)
+            //data.data[5] 鯉魚潭水庫(苗栗、台中)
+            //data.data[6] 德基水庫(台中)
+            //data.data[7] 石岡壩(台中)
+            //data.data[8] 霧社水庫(南投)
+            //data.data[9] 日月潭水庫(南投)
+            //data.data[10] 集集攔河堰(南投)
+            //data.data[11] 仁義潭水庫(嘉義)
+            ////data.data[13] 蘭潭水庫(嘉義)
+            //data.data[12] 白河水庫(台南)
+            //data.data[13] 烏山頭水庫(台南)
+            //data.data[14] 曾文水庫(嘉義、台南)
+            //data.data[15] 南化水庫(台南、高雄)
+            //data.data[16] 阿公店水庫(高雄)
+            //data.data[17] 高屏溪攔河堰(高雄)
+            //data.data[18] 牡丹水庫(屏東)
+
+            var config = liquidFillGaugeDefaultSettings();
+            var j=100;
+            for (var i = 0; i < 19; i++) {
+                  // if(data.data[i].immediatePercentage.replace('%','') <= 30){
+                        if(data.data[i].immediateStorage.replace('%','') <= 30){
+
+                            config.circleColor = "#FF7777";
+                            config.textColor = "#FF4444";
+                            config.waveTextColor = "#FFAAAA";
+                            config.waveColor = "#FFDDDD";
+                            $('<div class="col-md-3 col-sm-6"><svg id="fillgauge'+j+'" ;height="200"></svg><h4><strong>' + data.data[i].reservoirName + '</strong></h4></div>').appendTo('#tab_f');
+
+            	} // else if(data.data[i].immediatePercentage.replace('%','') <= 60){
+                        else if(data.data[i].immediateStorage.replace('%','') <= 60){
+                              config.circleColor = "#808015";
+                              config.textColor = "#555500";
+                              config.waveTextColor = "#FFFFAA";
+                              config.waveColor = "#AAAA39";
+                              $('<div class="col-md-3 col-sm-6"><svg id="fillgauge'+j+'" ;height="200"></svg><h4><strong>' + data.data[i].reservoirName + '</strong></h4></div>').appendTo('#tab_e');
+
+                        }
+                        else {
+                              config = liquidFillGaugeDefaultSettings();
+                              $('<div class="col-md-3 col-sm-6"><svg id="fillgauge'+j+'" ;height="200"></svg><h4><strong>' + data.data[i].reservoirName + '</strong></h4></div>').appendTo('#tab_d');
+
+                        }
+                        config.waveAnimateTime = 2000;
+                        config.waveHeight = 0.2;
+                        config.waveCount = 1;
+                  // loadLiquidFillGauge('fillgauge'+i, Number(data.data[i].immediatePercentage.replace('%','')), config);
+                  loadLiquidFillGauge('fillgauge'+i, Number(data.data[i].immediateStorage.replace('%','')), config);
+                  loadLiquidFillGauge('fillgauge'+j++, Number(data.data[i].immediateStorage.replace('%','')), config);
+
+                  /*  document.getElementById("demo").innerHTML = data.data[i].reservoirName; */
+                  
+
+            };
             
-            reservoirData = data.data;
-            //reservoirData[0] 石門水庫(新北、桃園、新竹)
-            //reservoirData[1] 新山水庫
-            //reservoirData[2] 翡翠水庫
-            //reservoirData[3] 寶山水庫
-            //reservoirData[4] 寶山第二水庫
-            //reservoirData[5] 永和山水庫
-            //reservoirData[6] 明德水庫 
-            //reservoirData[7] 鯉魚潭水庫
-            //reservoirData[8] 德基水庫
-            //reservoirData[9] 石岡壩
-            //reservoirData[10] 霧社水庫
-            //reservoirData[11] 日月潭水庫
-            //reservoirData[12] 仁義潭水庫
-            //reservoirData[13] 蘭潭水庫
-            //reservoirData[14] 烏山頭水庫
-            //reservoirData[15] 曾文水庫
-            //reservoirData[16] 南化水庫
-            //reservoirData[17] 阿公店水庫
-            //reservoirData[18] 阿公店水庫(洩洪至二仁溪)
-            //reservoirData[19] 牡丹水庫
-            //reservoirData[20] 成功水庫
-            
-            var config1 = liquidFillGaugeDefaultSettings();
-            config1.circleColor = "#FF7777";
-            config1.textColor = "#FF4444";
-            config1.waveTextColor = "#FFAAAA";
-            config1.waveColor = "#FFDDDD";
-            config1.circleThickness = 0.2;
-            config1.textVertPosition = 0.2;
-            config1.waveAnimateTime = 1000;
-            loadLiquidFillGauge("fillgauge1", Number(reservoirData[0].immediatePercentage.replace('%','')), config1);
-            
-            var config2 = liquidFillGaugeDefaultSettings();
-            config2.circleColor = "#D4AB6A";
-            config2.textColor = "#553300";
-            config2.waveTextColor = "#805615";
-            config2.waveColor = "#AA7D39";
-            config2.circleThickness = 0.1;
-            config2.circleFillGap = 0.2;
-            config2.textVertPosition = 0.8;
-            config2.waveAnimateTime = 2000;
-            config2.waveHeight = 0.3;
-            config2.waveCount = 1;
-            loadLiquidFillGauge("fillgauge2", Number(reservoirData[2].immediatePercentage.replace('%','')), config2);
-            
-            var config3 = liquidFillGaugeDefaultSettings();
-            loadLiquidFillGauge("fillgauge3", Number(reservoirData[3].immediatePercentage.replace('%','')), config3);
-            
-            var config4 = liquidFillGaugeDefaultSettings();
-            config4.circleThickness = 0.15;
-            config4.circleColor = "#808015";
-            config4.textColor = "#555500";
-            config4.waveTextColor = "#FFFFAA";
-            config4.waveColor = "#AAAA39";
-            config4.textVertPosition = 0.8;
-            config4.waveAnimateTime = 1000;
-            config4.waveHeight = 0.05;
-            config4.waveAnimate = true;
-            config4.waveRise = false;
-            config4.waveOffset = 0.25;
-            config4.textSize = 0.75;
-            config4.waveCount = 3;
-            loadLiquidFillGauge("fillgauge4", Number(reservoirData[14].immediatePercentage.replace('%','')), config4);
-            
-            var config5 = liquidFillGaugeDefaultSettings();
-            config5.circleThickness = 0.4;
-            config5.circleColor = "#6DA398";
-            config5.textColor = "#0E5144";
-            config5.waveTextColor = "#6DA398";
-            config5.waveColor = "#246D5F";
-            config5.textVertPosition = 0.52;
-            config5.waveAnimateTime = 5000;
-            config5.waveHeight = 0;
-            config5.waveAnimate = false;
-            config5.waveCount = 2;
-            config5.waveOffset = 0.25;
-            config5.textSize = 1.2;
-            config5.minValue = 30;
-            config5.maxValue = 150
-            config5.displayPercent = false;
-            loadLiquidFillGauge("fillgauge5", Number(reservoirData[15].immediatePercentage.replace('%','')), config5);
-        }
+               //if(data.data[i].immediateStorage.replace('%','') <= 30){
+		  // $('.normalclass').on('click', function(){
+		  // // 把下面內容塞進 DOM
+		  // var picture = 'fillgauge'+i;
+		  
+		  // $('<div class="col-md-3 col-sm-6"><svg id="fillgauge0" height="200"></svg><h4><strong>' + data.data[0].reservoirName + '</strong></h4></div>').appendTo('#tab_d');
+		  // });
+                //}
+          }
     });
 });
