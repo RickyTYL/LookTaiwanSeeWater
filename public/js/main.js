@@ -37,12 +37,15 @@ $(function () {
         dataType: "json",
         success: function (data) {
             var reservoirData = data.data;
+            console.log(reservoirData);
 
             var config = liquidFillGaugeDefaultSettings();
             var j = 100;
             for (var i = 0; i < reservoirData.length; i++) {
                 // if(data.data[i].immediatePercentage.replace('%','') <= 30){
                 var percentage = reservoirData[i].immediatePercentage;
+//                if(percentage==='')
+//                    continue;
                 if (percentage <= 30) {
 
                     config.circleColor = "#FF7777";
