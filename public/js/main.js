@@ -33,8 +33,8 @@ $(function () {
 $(function () {
     $.ajax({
         type: "GET",
-        url: "http://127.0.0.1:10080/", ///data
-        dataType: "jsonp",
+        url: "/data", 
+        dataType: "json",
         success: function (data) {
             var reservoirData = data.data;
             console.log(reservoirData);
