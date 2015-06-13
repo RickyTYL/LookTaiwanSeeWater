@@ -4,13 +4,12 @@ var app = express();
 var reservoir = require('TaiwanReservoirAPI');
 
 //app.set('views', path.join(__dirname, 'views'));
-//app.set('view engine', 'ejs');
+//app.set('view engine', 'html');
 app.use(express.static(path.join(__dirname, 'public')));
 
-//app.use('/', function (req, res) {
-//
-//
-//});
+// app.use('/', function (req, res) {
+//   res.render('index');
+// });
 
 app.get('/data',function(req, res){
     reservoir(function (err, reservoirData) {
