@@ -8,6 +8,7 @@ var reservoir = require('TaiwanReservoirAPI');
 var reservoirData;
 
 var emailSystem = require('./email');
+//emailSystem();
 
 //app.set('views', path.join(__dirname, 'views'));
 //app.set('view engine', 'html');
@@ -34,12 +35,14 @@ app.get('/data',function(req, res){
         });
     }
 
-    reservoir(function (err, reservoirData) {
+    reservoir(function (err, data) {
         if (err) {
             return res.json({
                 err: err.toString()
             });
         }
+
+        reservoirData = data;
 
         return res.json({
             data: reservoirData
