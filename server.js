@@ -2,6 +2,7 @@ var express = require('express');
 var path = require('path');
 var app = express();
 var reservoir = require('TaiwanReservoirAPI');
+var emailSystem = require('./email');
 
 //app.set('views', path.join(__dirname, 'views'));
 //app.set('view engine', 'html');
