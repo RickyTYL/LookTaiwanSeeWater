@@ -1,18 +1,39 @@
 var express = require('express');
 var path = require('path');
 var app = express();
+var schedule = require('node-schedule');
 var reservoir = require('TaiwanReservoirAPI');
+
+// Defined output data
+var reservoirData;
+
 var emailSystem = require('./email');
 
 //app.set('views', path.join(__dirname, 'views'));
 //app.set('view engine', 'html');
 app.use(express.static(path.join(__dirname, 'public')));
 
+var updateData = schedule.scheduleJob('*/30 * * * 1-5', function(){
+    reservoir(function (err, data){
+      if(err === null)
+        reservoirData = data;
+
+      return;
+    });
+});
+
 // app.use('/', function (req, res) {
 //   res.render('index');
 // });
 
 app.get('/data',function(req, res){
+
+    if(reservoirData){
+        return res.json({
+            data: reservoirData
+        });
+    }
+
     reservoir(function (err, reservoirData) {
         if (err) {
             return res.json({
