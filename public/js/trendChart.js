@@ -3,6 +3,7 @@ function addAxesAndLegend (svg, xAxis, yAxis, margin, chartWidth, chartHeight) {
     legendHeight = 100;
     
     // clipping to make sure nothing appears behind legend
+/*
     svg.append('clipPath')
     .attr('id', 'axes-clip')
     .append('polygon')
@@ -12,7 +13,8 @@ function addAxesAndLegend (svg, xAxis, yAxis, margin, chartWidth, chartHeight) {
           (chartWidth + margin.right)    + ',' + legendHeight                  + ' ' +
           (chartWidth + margin.right)    + ',' + (chartHeight + margin.bottom) + ' ' +
           (-margin.left)                 + ',' + (chartHeight + margin.bottom));
-    
+*/
+
     var axes = svg.append('g')
     .attr('clip-path', 'url(#axes-clip)');
     
@@ -76,6 +78,7 @@ function addAxesAndLegend (svg, xAxis, yAxis, margin, chartWidth, chartHeight) {
 }
 
 function drawPaths (svg, data, x, y) {
+/*
     var upperOuterArea = d3.svg.area()
     .interpolate('basis')
     .x (function (d) { return x(d.date) || 1; })
@@ -88,11 +91,13 @@ function drawPaths (svg, data, x, y) {
     .y0(function (d) { return y(d.pct75); })
     .y1(function (d) { return y(d.pct50); });
     
+*/
     var medianLine = d3.svg.line()
     .interpolate('basis')
     .x(function (d) { return x(d.date); })
     .y(function (d) { return y(d.pct50); });
     
+/*
     var lowerInnerArea = d3.svg.area()
     .interpolate('basis')
     .x (function (d) { return x(d.date) || 1; })
@@ -105,8 +110,10 @@ function drawPaths (svg, data, x, y) {
     .y0(function (d) { return y(d.pct25); })
     .y1(function (d) { return y(d.pct05); });
     
+*/
     svg.datum(data);
     
+/*
     svg.append('path')
     .attr('class', 'area upper outer')
     .attr('d', upperOuterArea)
@@ -127,6 +134,7 @@ function drawPaths (svg, data, x, y) {
     .attr('d', lowerInnerArea)
     .attr('clip-path', 'url(#rect-clip)');
     
+*/
     svg.append('path')
     .attr('class', 'median-line')
     .attr('d', medianLine)
@@ -177,11 +185,13 @@ function startTransitions (svg, chartWidth, chartHeight, rectClip, markers, x) {
     .duration(1000*markers.length)
     .attr('width', chartWidth);
     
+/*
     markers.forEach(function (marker, i) {
                     setTimeout(function () {
                                addMarker(marker, svg, chartHeight, x);
                                }, 1000 + 500*i);
                     });
+*/
 }
 
 function makeChart (data, markers) {
