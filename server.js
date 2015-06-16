@@ -35,13 +35,17 @@ function saveSevenData()
   {
     (function(index) {
       var time = moment().subtract(index, 'days').format('YYYY-MM-DD');
-      reservoir.getPastStatistic(function(err,data){
-        if (err) console.error(err);
-        fs.writeFile('./data/' + time, JSON.stringify(data), function(err) {
-          if (err) return console.log(err);
-          console.log('Write data to ' + time);
-        });
-      }, index);
+      fs.exists('./data/' + time, function(exists) {
+        if (!exists) {
+          reservoir.getPastStatistic(function(err,data){
+            if (err) console.error(err);
+            fs.writeFile('./data/' + time, JSON.stringify(data), function(err) {
+              if (err) return console.log(err);
+              console.log('Write data to ' + time);
+            });
+          }, index);
+        }
+      });
     })(i);
   }
 }
