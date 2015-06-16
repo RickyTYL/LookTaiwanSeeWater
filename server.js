@@ -17,26 +17,40 @@ var emailSystem = require('./email');
 app.use(express.static(path.join(__dirname, 'public')));
 
 function getReservoirData() {
-  reservoir(function(err, data) {
+  reservoir.statistic(function(err, data) {
     if (err) console.error(err);
 
     var yesterday = moment().subtract(1, 'days').format('YYYY-MM-DD');
-    fs.exists('./data/' + yesterday, function(exists) {
-      if (!exists) {
-        fs.writeFile('./data/' + yesterday, JSON.stringify(data), function(err) {
-          if (err) return console.log(err);
-          console.log('Write data to ' + yesterday);
-        });
-      }
+    fs.writeFile('./data/' + yesterday, JSON.stringify(data), function(err) {
+      if (err) return console.log(err);
+      console.log('Write data to ' + yesterday);
     });
   });
 }
 getReservoirData();
 
+function saveSevenData()
+{
+  for(var i=2;i<=7;i++)
+  {
+    (function(index) {
+      var time = moment().subtract(index, 'days').format('YYYY-MM-DD');
+      reservoir.getPastStatistic(function(err,data){
+        if (err) console.error(err);
+        fs.writeFile('./data/' + time, JSON.stringify(data), function(err) {
+          if (err) return console.log(err);
+          console.log('Write data to ' + time);
+        });
+      }, index);
+    })(i);
+  }
+}
+saveSevenData();
+
 var updateData = schedule.scheduleJob('*/30 * * * 1-5', function() {
   var today = moment().format('YYYY-MM-DD');
 
-  reservoir(function(err, data) {
+  reservoir.immediate(function(err, data) {
     fs.writeFile('./data/' + today, JSON.stringify(data), function(err) {
       if (err) return console.log(err);
       console.log('Write data to ' + today);
@@ -61,6 +75,21 @@ var holidayData = schedule.scheduleJob({
   },
   function() {
     // 星期六、日之資料則在星期一統一輸入
+    var saturday = moment().subtract(2, 'days').format('YYYY-MM-DD');
+    reservoir.getPastStatistic(function(err, data){
+      fs.writeFile('./data/' + saturday, JSON.stringify(data), function(err) {
+        if (err) return console.log(err);
+        console.log('Write data to ' + saturday);
+      });
+    },2);
+
+    var sunday = moment().subtract(1, 'days').format('YYYY-MM-DD');
+    reservoir.statistic(function(err, data){
+      fs.writeFile('./data/' + sunday, JSON.stringify(data), function(err) {
+        if (err) return console.log(err);
+        console.log('Write data to ' + sunday);
+      });
+    });
   }
 );
 
@@ -81,7 +110,7 @@ app.get('/data', function(req, res) {
         });
       });
     } else {
-      reservoir(function(err, data) {
+      reservoir.immediate(function(err, data) {
         if (err) throw err;
 
         fs.writeFile('./data/' + today, JSON.stringify(data), function(err) {
