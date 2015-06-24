@@ -134,19 +134,19 @@ app.get('/chart', function(req, res) {
 
   async.parallel({
       one: function(callback) {
-        fs.readFile('./data/' + moment().subtract(1, 'days').format('YYYY-MM-DD'), function(err, data) {
+        fs.readFile('./data/' + moment().subtract(7, 'days').format('YYYY-MM-DD'), function(err, data) {
           if (err) callback(err);
           callback(null, JSON.parse(data));
         });
       },
       two: function(callback) {
-        fs.readFile('./data/' + moment().subtract(2, 'days').format('YYYY-MM-DD'), function(err, data) {
+        fs.readFile('./data/' + moment().subtract(6, 'days').format('YYYY-MM-DD'), function(err, data) {
           if (err) callback(err);
           callback(null, JSON.parse(data));
         });
       },
       three: function(callback) {
-        fs.readFile('./data/' + moment().subtract(3, 'days').format('YYYY-MM-DD'), function(err, data) {
+        fs.readFile('./data/' + moment().subtract(5, 'days').format('YYYY-MM-DD'), function(err, data) {
           if (err) callback(err);
           callback(null, JSON.parse(data));
         });
@@ -158,19 +158,19 @@ app.get('/chart', function(req, res) {
         });
       },
       five: function(callback) {
-        fs.readFile('./data/' + moment().subtract(5, 'days').format('YYYY-MM-DD'), function(err, data) {
+        fs.readFile('./data/' + moment().subtract(3, 'days').format('YYYY-MM-DD'), function(err, data) {
           if (err) callback(err);
           callback(null, JSON.parse(data));
         });
       },
       six: function(callback) {
-        fs.readFile('./data/' + moment().subtract(6, 'days').format('YYYY-MM-DD'), function(err, data) {
+        fs.readFile('./data/' + moment().subtract(2, 'days').format('YYYY-MM-DD'), function(err, data) {
           if (err) callback(err);
           callback(null, JSON.parse(data));
         });
       },
       seven: function(callback) {
-        fs.readFile('./data/' + moment().subtract(7, 'days').format('YYYY-MM-DD'), function(err, data) {
+        fs.readFile('./data/' + moment().subtract(1, 'days').format('YYYY-MM-DD'), function(err, data) {
           if (err) callback(err);
           callback(null, JSON.parse(data));
         });
