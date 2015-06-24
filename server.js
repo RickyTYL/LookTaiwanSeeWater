@@ -4,6 +4,7 @@ var app = express();
 var schedule = require('node-schedule');
 var moment = require('moment');
 var fs = require('fs');
+var async = require('async');
 var reservoir = require('TaiwanReservoirAPI');
 
 // Defined output data
@@ -130,6 +131,58 @@ app.get('/data', function(req, res) {
   });
 
 });
+
+app.get('/chart', function(req, res) {
+
+  async.parallel({
+    one: function(callback){
+      fs.readFile('./data/' + moment().subtract(1, 'days').format('YYYY-MM-DD'), function(err, data) {
+        if(err) callback(err);
+        callback(null, JSON.parse(data));
+      });
+    },
+    two: function(callback){
+      fs.readFile('./data/' + moment().subtract(2, 'days').format('YYYY-MM-DD'), function(err, data) {
+        if(err) callback(err);
+        callback(null, JSON.parse(data));
+      });
+    },
+    three:function(callback){
+      fs.readFile('./data/' + moment().subtract(3, 'days').format('YYYY-MM-DD'), function(err, data) {
+        if(err) callback(err);
+        callback(null, JSON.parse(data));
+      });
+    },
+    four:function(callback){
+      fs.readFile('./data/' + moment().subtract(4, 'days').format('YYYY-MM-DD'), function(err, data) {
+        if(err) callback(err);
+        callback(null, JSON.parse(data));
+      });
+    },
+    five:function(callback){
+      fs.readFile('./data/' + moment().subtract(5, 'days').format('YYYY-MM-DD'), function(err, data) {
+        if(err) callback(err);
+        callback(null, JSON.parse(data));
+      });
+    },
+    six:function(callback){
+      fs.readFile('./data/' + moment().subtract(6, 'days').format('YYYY-MM-DD'), function(err, data) {
+        if(err) callback(err);
+        callback(null, JSON.parse(data));
+      });
+    },
+    seven:function(callback){
+      fs.readFile('./data/' + moment().subtract(7, 'days').format('YYYY-MM-DD'), function(err, data) {
+        if(err) callback(err);
+        callback(null, JSON.parse(data));
+      });
+    }
+  },
+  function(err, results) {
+      res.json({data:results});
+  });
+});
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
