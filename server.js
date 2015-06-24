@@ -30,15 +30,13 @@ function getReservoirData() {
 }
 getReservoirData();
 
-function saveSevenData()
-{
-  for(var i=2;i<=7;i++)
-  {
+function saveSevenData() {
+  for (var i = 2; i <= 7; i++) {
     (function(index) {
       var time = moment().subtract(index, 'days').format('YYYY-MM-DD');
       fs.exists('./data/' + time, function(exists) {
         if (!exists) {
-          reservoir.getPastStatistic(function(err,data){
+          reservoir.getPastStatistic(function(err, data) {
             if (err) console.error(err);
             fs.writeFile('./data/' + time, JSON.stringify(data), function(err) {
               if (err) return console.log(err);
@@ -81,15 +79,15 @@ var holidayData = schedule.scheduleJob({
   function() {
     // 星期六、日之資料則在星期一統一輸入
     var saturday = moment().subtract(2, 'days').format('YYYY-MM-DD');
-    reservoir.getPastStatistic(function(err, data){
+    reservoir.getPastStatistic(function(err, data) {
       fs.writeFile('./data/' + saturday, JSON.stringify(data), function(err) {
         if (err) return console.log(err);
         console.log('Write data to ' + saturday);
       });
-    },2);
+    }, 2);
 
     var sunday = moment().subtract(1, 'days').format('YYYY-MM-DD');
-    reservoir.statistic(function(err, data){
+    reservoir.statistic(function(err, data) {
       fs.writeFile('./data/' + sunday, JSON.stringify(data), function(err) {
         if (err) return console.log(err);
         console.log('Write data to ' + sunday);
@@ -135,59 +133,58 @@ app.get('/data', function(req, res) {
 app.get('/chart', function(req, res) {
 
   async.parallel({
-    one: function(callback){
-      fs.readFile('./data/' + moment().subtract(1, 'days').format('YYYY-MM-DD'), function(err, data) {
-        if(err) callback(err);
-        callback(null, JSON.parse(data));
-      });
+      one: function(callback) {
+        fs.readFile('./data/' + moment().subtract(1, 'days').format('YYYY-MM-DD'), function(err, data) {
+          if (err) callback(err);
+          callback(null, JSON.parse(data));
+        });
+      },
+      two: function(callback) {
+        fs.readFile('./data/' + moment().subtract(2, 'days').format('YYYY-MM-DD'), function(err, data) {
+          if (err) callback(err);
+          callback(null, JSON.parse(data));
+        });
+      },
+      three: function(callback) {
+        fs.readFile('./data/' + moment().subtract(3, 'days').format('YYYY-MM-DD'), function(err, data) {
+          if (err) callback(err);
+          callback(null, JSON.parse(data));
+        });
+      },
+      four: function(callback) {
+        fs.readFile('./data/' + moment().subtract(4, 'days').format('YYYY-MM-DD'), function(err, data) {
+          if (err) callback(err);
+          callback(null, JSON.parse(data));
+        });
+      },
+      five: function(callback) {
+        fs.readFile('./data/' + moment().subtract(5, 'days').format('YYYY-MM-DD'), function(err, data) {
+          if (err) callback(err);
+          callback(null, JSON.parse(data));
+        });
+      },
+      six: function(callback) {
+        fs.readFile('./data/' + moment().subtract(6, 'days').format('YYYY-MM-DD'), function(err, data) {
+          if (err) callback(err);
+          callback(null, JSON.parse(data));
+        });
+      },
+      seven: function(callback) {
+        fs.readFile('./data/' + moment().subtract(7, 'days').format('YYYY-MM-DD'), function(err, data) {
+          if (err) callback(err);
+          callback(null, JSON.parse(data));
+        });
+      }
     },
-    two: function(callback){
-      fs.readFile('./data/' + moment().subtract(2, 'days').format('YYYY-MM-DD'), function(err, data) {
-        if(err) callback(err);
-        callback(null, JSON.parse(data));
-      });
-    },
-    three:function(callback){
-      fs.readFile('./data/' + moment().subtract(3, 'days').format('YYYY-MM-DD'), function(err, data) {
-        if(err) callback(err);
-        callback(null, JSON.parse(data));
-      });
-    },
-    four:function(callback){
-      fs.readFile('./data/' + moment().subtract(4, 'days').format('YYYY-MM-DD'), function(err, data) {
-        if(err) callback(err);
-        callback(null, JSON.parse(data));
-      });
-    },
-    five:function(callback){
-      fs.readFile('./data/' + moment().subtract(5, 'days').format('YYYY-MM-DD'), function(err, data) {
-        if(err) callback(err);
-        callback(null, JSON.parse(data));
-      });
-    },
-    six:function(callback){
-      fs.readFile('./data/' + moment().subtract(6, 'days').format('YYYY-MM-DD'), function(err, data) {
-        if(err) callback(err);
-        callback(null, JSON.parse(data));
-      });
-    },
-    seven:function(callback){
-      fs.readFile('./data/' + moment().subtract(7, 'days').format('YYYY-MM-DD'), function(err, data) {
-        if(err) callback(err);
-        callback(null, JSON.parse(data));
-      });
-    }
-  },
-  function(err, results) {
+    function(err, results) {
       var data = results.one;
       var percentageData = [];
       var stoargeData = [];
       var dateRange = [];
 
-      for(var i=7;i>0;i--) dateRange.push(moment().subtract(i, 'days').format('MM/DD'));
+      for (var i = 7; i > 0; i--) dateRange.push(moment().subtract(i, 'days').format('MM/DD'));
 
-      for(var j=0;j<data.length;j++)
-      {
+      for (var j = 0; j < data.length; j++) {
         percentageData.push({
           resevoir: data[j].reservoirName,
           first: results.one[j].lastPercentage,
@@ -212,13 +209,17 @@ app.get('/chart', function(req, res) {
       }
 
       //res.json(results);
-      res.json({percentageData:percentageData, stoargeData:stoargeData, dateRange: dateRange});
-
-      fs.writeFile('./data/tmp', JSON.stringify({percentageData:percentageData, stoargeData:stoargeData, dateRange: dateRange}), function(err) {
-        if (err) return console.log(err);
-        console.log('Write data to tmp');
+      res.json({
+        percentageData: percentageData,
+        stoargeData: stoargeData,
+        dateRange: dateRange
       });
-  });
+
+      // fs.writeFile('./data/tmp', JSON.stringify({percentageData:percentageData, stoargeData:stoargeData, dateRange: dateRange}), function(err) {
+      //   if (err) return console.log(err);
+      //   console.log('Write data to tmp');
+      // });
+    });
 });
 
 
