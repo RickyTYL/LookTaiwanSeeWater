@@ -179,7 +179,45 @@ app.get('/chart', function(req, res) {
     }
   },
   function(err, results) {
-      res.json({data:results});
+      var data = results.one;
+      var percentageData = [];
+      var stoargeData = [];
+      var dateRange = [];
+
+      for(var i=7;i>0;i--) dateRange.push(moment().subtract(i, 'days').format('MM/DD'));
+
+      for(var j=0;j<data.length;j++)
+      {
+        percentageData.push({
+          resevoir: data[j].reservoirName,
+          first: results.one[j].lastPercentage,
+          second: results.two[j].lastPercentage,
+          third: results.three[j].lastPercentage,
+          fourth: results.four[j].lastPercentage,
+          fifth: results.five[j].lastPercentage,
+          sixth: results.six[j].lastPercentage,
+          seventh: results.seven[j].lastPercentage,
+        });
+
+        stoargeData.push({
+          resevoir: data[j].reservoirName,
+          first: results.one[j].lastStorage,
+          second: results.two[j].lastStorage,
+          third: results.three[j].lastStorage,
+          fourth: results.four[j].lastStorage,
+          fifth: results.five[j].lastStorage,
+          sixth: results.six[j].lastStorage,
+          seventh: results.seven[j].lastStorage,
+        });
+      }
+
+      //res.json(results);
+      res.json({percentageData:percentageData, stoargeData:stoargeData, dateRange: dateRange});
+
+      fs.writeFile('./data/tmp', JSON.stringify({percentageData:percentageData, stoargeData:stoargeData, dateRange: dateRange}), function(err) {
+        if (err) return console.log(err);
+        console.log('Write data to tmp');
+      });
   });
 });
 
