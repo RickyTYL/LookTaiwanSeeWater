@@ -5,6 +5,7 @@
   "author": "Xhriman",
   "license": "MIT",
   "dependencies": {
+    "async": "^1.2.1",
     "ejs": "^2.3.1",
     "email-templates": "^1.2.1",
     "express": "^4.12.3",
