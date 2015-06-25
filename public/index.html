@@ -30,6 +30,9 @@
     <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
 
+    <!-- Parse Core JavaScript -->
+    <script src="http://www.parsecdn.com/js/parse-1.4.2.min.js"></script>
+
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -50,7 +53,7 @@
           fjs.parentNode.insertBefore(js, fjs);
       }(document, 'script', 'facebook-jssdk'));
     </script>
-    
+
 
     <!-- Navigation -->
     <a id="menu-toggle" href="#" class="btn btn-dark btn-lg toggle"><i class="fa fa-bars"></i></a>
@@ -112,28 +115,28 @@
         <div class="carousel-inner">
             <div class="item active">
                 <!-- Set the first background image using inline CSS below. -->
-                <div class="fill" style="background-image:url('http://1032se-team7.github.io/LookTaiwanSeeWater/img/FeiCui.jpg');"></div>
+                <div class="fill" style="background-image:url('img/FeiCui.jpg');"></div>
                 <div class="carousel-caption">
                     <h2>翡翠水庫</h2>
                 </div>
             </div>
             <div class="item">
                 <!-- Set the second background image using inline CSS below. -->
-                <div class="fill" style="background-image:url('http://1032se-team7.github.io/LookTaiwanSeeWater/img/PingLinXi.jpg');"></div>
+                <div class="fill" style="background-image:url('img/PingLinXi.jpg');"></div>
                 <div class="carousel-caption">
                     <h2>坪林溪</h2>
                 </div>
             </div>
             <div class="item">
                 <!-- Set the third background image using inline CSS below. -->
-                <div class="fill" style="background-image:url('http://1032se-team7.github.io/LookTaiwanSeeWater/img/GongLiaoShuangXi.jpg');"></div>
+                <div class="fill" style="background-image:url('img/GongLiaoShuangXi.jpg');"></div>
                 <div class="carousel-caption">
                     <h2>貢寮雙溪</h2>
                 </div>
             </div>
             <div class="item">
                 <!-- Set the third background image using inline CSS below. -->
-                <div class="fill" style="background-image:url('http://1032se-team7.github.io/LookTaiwanSeeWater/img/RenYiTan.jpg');"></div>
+                <div class="fill" style="background-image:url('img/RenYiTan.jpg');"></div>
                 <div class="carousel-caption">
                     <h2>仁義潭</h2>
                 </div>
@@ -142,19 +145,19 @@
                 <!-- Set the third background image using inline CSS below. -->
                 <div class="fill" style="background-image:url('img/水足跡.jpg');height:100%;background-size:contain;background-repeat:no-repeat;"></div>
                 <div class="carousel-caption">
-                    
+
                 </div>
             </div>
             <div class="item">
                 <!-- Set the third background image using inline CSS below. -->
                 <div class="fill" style="background-image:url('img/食物水足跡.jpg');height:100%;background-size:contain;background-repeat:no-repeat;"></div>
                 <div class="carousel-caption">
-                    
+
                 </div>
             </div>
             <div class="item">
                 <!-- Set the third background image using inline CSS below. -->
-                <div class="fill" style="background-image:url('http://1032se-team7.github.io/LookTaiwanSeeWater/img/MingDe.jpg');"></div>
+                <div class="fill" style="background-image:url('img/MingDe.jpg');"></div>
                 <div class="carousel-caption">
                     <h2>明德水庫</h2>
                 </div>
@@ -289,11 +292,11 @@
             </div>
             <div class="tab-pane fade active" id="tab_e">
                 <br><br>
-                
+
             </div>
             <div class="tab-pane fade active" id="tab_f">
                 <br><br>
-                
+
             </div>
         </div><!-- tab content -->
     </div><!-- end of row -->
@@ -312,10 +315,10 @@
                     <div class="col-xs-6">
 
                         <div class="service-item">
-                            
+
                             <input class="form-control" id = "waterConsumption" value = "0" />
                             <label>用水量(度)</label>
-                            
+
                             <select id = "TPMeterSize" class="form-control">
                                 <option value = "17" >13</option>
                                 <option value = "68" >20</option>
@@ -335,7 +338,7 @@
                             <label id = "TPWaterFee" style="font-size:24px"></label><label>元</label>
                         </div>
                     </div>
-                    
+
                     <div class="col-xs-6">
                         <div class="service-item">
                             <select id="selectReservoir" class="form-control"></select>
@@ -357,7 +360,7 @@
                             <label>以上計算利用2013年用水量以及生活用水占用水比例18%，對即時水庫蓄水量做估算</label>
                         </div>
                     </div>
-                    
+
                 </div>
                 <!-- /.row (nested) -->
             </div>
@@ -367,6 +370,166 @@
     </div>
     <!-- /.container -->
 </section>
+
+
+<!-- Subscribe -->
+<section id="subcribe" class="subscribe bg-info">
+    <div class="container">
+        <div class="row text-center">
+            <div class="col-lg-10 col-lg-offset-1">
+                <h2>訂閱你所關注的水庫</h2>
+                <hr class="small">
+                <div class="row">
+                    <div class="col-xs-12">
+
+                      <!--This form is signUpForm -->
+                      <form id="signUpForm" class="form-horizontal">
+                      <fieldset>
+
+                      <!-- Form Name -->
+                      <legend>註冊</legend>
+
+                      <!-- Text input-->
+                      <div class="form-group">
+                        <label class="col-md-4 control-label" for="usernamesignUp">username*</label>
+                        <div class="col-md-4">
+                        <input id="usernamesignUp" name="username" type="text" placeholder="username" class="form-control input-md" required="">
+
+                        </div>
+                      </div>
+
+                      <!-- Text input-->
+                      <div class="form-group">
+                        <label class="col-md-4 control-label" for="emailsignUp">email*</label>
+                        <div class="col-md-4">
+                        <input id="emailsignUp" name="email" type="text" placeholder="email" class="form-control input-md" required="">
+
+                        </div>
+                      </div>
+
+                      <!-- Password input-->
+                      <div class="form-group">
+                        <label class="col-md-4 control-label" for="passwordsignUp">password*</label>
+                        <div class="col-md-4">
+                          <input id="passwordsignUp" name="password" type="password" placeholder="password" class="form-control input-md" required="">
+
+                        </div>
+                      </div>
+
+                      <!-- Role -->
+                      <div class="form-group">
+                        <label class="col-md-4 control-label" for="">角色*</label>
+                        <div class="col-md-4">
+                          <label class="radio-inline" for="-0">
+                            <input type="radio" name="role" id="-0" value="teacher" >
+                            管理者
+                          </label>
+                          <label class="radio-inline" for="-1">
+                            <input type="radio" name="role" id="-1" value="student" checked="checked">
+                            訂閱者
+                          </label>
+                        </div>
+                      </div>
+
+                      <!-- Button -->
+                      <div class="form-group">
+                        <label class="col-md-4 control-label" for="signUpBtn"></label>
+                        <div class="col-md-4">
+                          <button id="signUpBtn" name="signUpBtn" class="btn btn-primary">註冊</button>
+                          <!-- <a class="btn" href="logIn.html">前往登入</a> -->
+                          <a class="btnTologIn" class="btn">前往登入</a>
+                        </div>
+                      </div>
+                      </fieldset>
+                      </form>
+
+                      <!--This form is logInForm -->
+                      <form id="logInForm" class="form-horizontal">
+                      <fieldset>
+
+                      <!-- Form Name -->
+                      <legend>登入</legend>
+
+                      <!-- Text input-->
+                      <div class="form-group">
+                        <label class="col-md-4 control-label" for="usernamelogIn">使用者名稱</label>
+                        <div class="col-md-4">
+                        <input id="usernamelogIn" name="username" type="text" placeholder="username" class="form-control input-md" required="">
+
+                        </div>
+                      </div>
+
+                      <!-- Password input-->
+                      <div class="form-group">
+                        <label class="col-md-4 control-label" for="passwordlogIn">使用者密碼</label>
+                        <div class="col-md-4">
+                          <input id="passwordlogIn" name="password" type="password" placeholder="password" class="form-control input-md" required="">
+
+                        </div>
+                      </div>
+
+                      <!-- Button -->
+                      <div class="form-group">
+                        <label class="col-md-4 control-label" for="logInBtn"></label>
+                        <div class="col-md-4">
+                          <button id="logInBtn" name="logInBtn" class="btn btn-primary">登入</button>
+                          <a class="btnTosignUp" class="btn">前往註冊</a>
+                        </div>
+                      </div>
+                      </fieldset>
+                      </form>
+
+                      <div class="reservoir-table">
+                        <table id="table" class="table table-striped">
+                          <tr>
+                            <td>您已訂閱的水庫列表</td>
+                          </tr>
+                        </table>
+                      </div>
+                      <div class="reservoir-input">
+                        <label class="res1 btn btn-success active" for="res1">
+                          <input id="res1" type="checkbox" autocomplete="off" checked> 石門水庫(新北、桃園、新竹)
+                        </label>
+                        <label class="res2 btn btn-primary" for="res2">
+                          <input id="res2" type="checkbox" autocomplete="off"> 新山水庫(基隆)
+                        </label>
+                        <label class="res3 btn btn-info" for="res3">
+                          <input id="res3" type="checkbox" autocomplete="off"> 翡翠水庫(台北、新北)
+                        </label>
+                        <label class="res4 btn btn-warning" for="res4">
+                          <input id="res4" type="checkbox" autocomplete="off"> 寶山水庫(新竹)
+                        </label>
+                        <label class="res5 btn btn-danger" for="res5">
+                          <input id="res5" type="checkbox" autocomplete="off"> 寶山第二水庫(新竹)
+                        </label>
+                        <label class="res6 btn btn-primary" for="res6">
+                          <input id="res6" type="checkbox" autocomplete="off"> 永和山水庫(新竹、苗栗)
+                        </label>
+                        <label class="res7 btn btn-info" for="res7">
+                          <input id="res7" type="checkbox" autocomplete="off"> 明德水庫(苗栗)
+                        </label>
+                        <label class="res8 btn btn-success" for="res8">
+                          <input id="res8" type="checkbox" autocomplete="off"> 鯉魚潭水庫(苗栗、台中)
+                        </label>
+                        <label class="res9 btn btn-danger" for="res9">
+                          <input id="res9" type="checkbox" autocomplete="off"> 德基水庫(台中)
+                        </label>
+                        <label class="res10 btn btn-warning" for="res10">
+                          <input id="res10" type="checkbox" autocomplete="off"> 石岡壩(台中)
+                        </label>
+                      </div>
+                    </div>
+
+                <!-- /.row (nested) -->
+                </div>
+            <!-- /.col-lg-10 -->
+            </div>
+        <!-- /.row -->
+        </div>
+    <!-- /.container -->
+    </div>
+</section>
+
 
 <!-- Callout -->
 <aside id="videos" class="callout">
@@ -490,20 +653,153 @@
 </footer>
 
 <!-- jQuery -->
-<!--<script src="js/jquery.js"></script>-->
+<script src="js/jquery.js"></script>
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
 
 <!-- Bootstrap Core JavaScript -->
 <script src="js/bootstrap.min.js"></script>
 
-<script src="http://d3js.org/d3.v3.min.js"></script>
-<script src="js/liquidFillGauge.js"></script>
-    
 <!-- Custom Theme JavaScript -->
 <script src="js/main.js"></script>
 <script src="js/select.js"></script>
+<script src="http://d3js.org/d3.v3.min.js"></script>
+<script src="js/liquidFillGauge.js"></script>
 <script src="js/waterFee.js"></script>
-    
+
+<!--引入初始化 Parse 的 js 檔案-->
+<script type="text/javascript" src="js/key.js"></script>
+<script type="text/javascript">
+
+  $(document).on('submit','#signUpForm',function(e){
+
+    console.log('signUp submit');
+      e.preventDefault();  // 避免 form submit 完成後 轉址
+      var user = new Parse.User();
+      user.set("username", $('#usernamesignUp').val());
+      user.set("email",    $('#emailsignUp').val());
+      user.set("password", $('#passwordsignUp').val());
+      // username, email, passwod 一定都要有
+
+      // // set user role depending on RadioBox
+      // if($("#-1").prop("checked")){
+      //   user.set("role", "student");
+      // }
+      // else{
+      //   user.set("role", "teacher");
+      // }
+
+      user.signUp(null,{
+        success : function(user){     // 註冊成功後會執行的 callback
+          console.log(user);
+          alert("你已註冊成功，恭喜！");
+          window.location="index.html";
+          return null //避免程式繼續
+        },
+        error : function(course, error){ // 註冊失敗後會執行的 callback
+          console.log('error', error.message) ;
+          alert(error.message);
+        }
+      });//endof signUp
+    /* 結束*/
+  });  //endof signUpBtn onSubmit
+</script>
+<script type="text/javascript">
+
+  $(document).ready(function() {
+    var currentUser = Parse.User.current();
+    if (currentUser) {
+      Parse.User.logOut();
+      console.log('logout current: ', Parse.User.current());
+      $('div.reservoir-table').hide();
+      $('div.reservoir-input').hide();
+    }
+  });
+
+  $(document).on('submit','#logInForm',function(e){
+
+    console.log('logIn submit');
+    /* 請閱讀完 html 後在這裡填入送出表單後需要執行的程式碼 */
+
+      // 提示1 : 記得使用 preventDefault 方程 避免表單轉址
+      e.preventDefault();  // 避免 form submit 完成後 轉址
+      //var user = new Parse.User(); //此嘗試方法錯誤
+      var username = $('#usernamelogIn').val() ;
+      var password = $('#passwordlogIn').val() ;
+
+      // 用 Parse.User.current() 判定使用者是否是登入的狀態，這裏還沒登入，會是 null
+      console.log("登入之前的 Parse.User.current() :", Parse.User.current());
+
+      Parse.User.logIn(username, password, {
+       success: function(user) {
+         // 到 console 看看 Parse.User.current()  的東西
+          var currentUser = Parse.User.current();
+          console.log("登入之後的 Parse.User.current() :", currentUser);
+          $('div.reservoir-table').show();
+          $('div.reservoir-input').show();
+
+
+          // 提示2 : 請在使用者登入成功後，自動幫助使用者簽到
+          var SignCourse = Parse.Object.extend("SignCourse");
+          var query = new Parse.Query(SignCourse);
+
+          query.equalTo("username", currentUser.get("username")); //Query Parse data for 'username column' is equal to currentUser.get("username")
+
+          query.find({
+            success: function(result) {
+                  if (result.length == 0) {
+                    var SignCourse = Parse.Object.extend("SignCourse");
+                    var attender = new SignCourse();
+
+                    attender.set("username", currentUser.get("username"));
+                    attender.set("role", currentUser.get("role"));
+                    attender.save(null, {
+                      success: function(attend) {
+                        console.log('attend signed');
+                      },
+                      error: function(attend, error) {
+                        alert(error);
+                        console.log('attend error', error.message);
+                      }
+                    });
+                  }
+            },
+            error: function(error) {
+                  alert(error);
+                  console.log('error', error.message);
+            }
+      });
+          // 提示3 : 簽到成功後，要將畫面切換到 index 頁面
+          alert('您已登入成功，將顯示你訂閱的所有水庫！');
+          //window.location = 'index.html';
+          return null;
+      },
+      error:function(user,error){
+        console.log('login error',error);
+        alert('您輸入的使用者名稱或密碼有誤！');
+      }
+
+      });//endof login
+    /* 結束*/
+  });//endof logInBtn onSubmit
+</script>
+<script>
+   $(document).ready(function() {
+     $('form#signUpForm').hide();
+
+   });
+
+   $('a.btnTologIn').click(function(e){
+     e.preventDefault();
+       $('form#signUpForm').hide();
+       $('form#logInForm').show();
+   });
+   $('a.btnTosignUp').click(function(e){
+     e.preventDefault();
+       $('form#signUpForm').show();
+       $('form#logInForm').hide();
+   });
+</script>
+
 <!-- Script to Activate the Carousel -->
 <script>
     $('.carousel').carousel({
