@@ -17,18 +17,30 @@ var emailSystem = require('./email');
 //app.set('view engine', 'html');
 app.use(express.static(path.join(__dirname, 'public')));
 
-function getReservoirData() {
+function saveDataWithDate(pastDay) {
+  var date = moment().subtract(pastDay, 'days').format('YYYY-MM-DD');
   reservoir.getPastStatistic(function(err, data) {
-    if (err) console.error(err);
-
-    var yesterday = moment().subtract(1, 'days').format('YYYY-MM-DD');
-    fs.writeFile('./data/' + yesterday, JSON.stringify(data), function(err) {
-      if (err) return console.log(err);
-      console.log('Write data to ' + yesterday);
+    if (err) {saveDataWithDate(pastDay);}
+    fs.writeFile('./data/' + date, JSON.stringify(data), function(err) {
+      if (err) console.log(err);
+      console.log('Write data to ' + date);
     });
-  }, 1);
+  }, pastDay);
 }
-getReservoirData();
+
+// function getReservoirData() {
+//   reservoir.getPastStatistic(function(err, data) {
+//     if (err) console.error(err);
+//
+//     var yesterday = moment().subtract(1, 'days').format('YYYY-MM-DD');
+//     fs.writeFile('./data/' + yesterday, JSON.stringify(data), function(err) {
+//       if (err) getReservoirData();
+//       console.log('Write data to ' + yesterday);
+//     });
+//   }, 1);
+// }
+saveDataWithDate(1);
+//getReservoirData();
 
 function saveSevenData() {
   for (var i = 2; i <= 7; i++) {
@@ -36,13 +48,7 @@ function saveSevenData() {
       var time = moment().subtract(index, 'days').format('YYYY-MM-DD');
       fs.exists('./data/' + time, function(exists) {
         if (!exists) {
-          reservoir.getPastStatistic(function(err, data) {
-            if (err) console.error(err);
-            fs.writeFile('./data/' + time, JSON.stringify(data), function(err) {
-              if (err) return console.log(err);
-              console.log('Write data to ' + time);
-            });
-          }, index);
+          saveDataWithDate(index);
         }
       });
     })(i);
@@ -68,7 +74,10 @@ var saveData = schedule.scheduleJob({
     minute: 0,
     dayOfWeek: [new schedule.Range(1, 6)]
   },
-  getReservoirData
+  function()
+  {
+    saveDataWithDate(1);
+  }
 );
 
 var holidayData = schedule.scheduleJob({
@@ -78,23 +87,12 @@ var holidayData = schedule.scheduleJob({
   },
   function() {
     // 星期六、日之資料則在星期一統一輸入
-    var saturday = moment().subtract(2, 'days').format('YYYY-MM-DD');
-    reservoir.getPastStatistic(function(err, data) {
-      fs.writeFile('./data/' + saturday, JSON.stringify(data), function(err) {
-        if (err) return console.log(err);
-        console.log('Write data to ' + saturday);
-      });
-    }, 2);
-
-    var sunday = moment().subtract(1, 'days').format('YYYY-MM-DD');
-    reservoir.statistic(function(err, data) {
-      fs.writeFile('./data/' + sunday, JSON.stringify(data), function(err) {
-        if (err) return console.log(err);
-        console.log('Write data to ' + sunday);
-      });
-    });
+    saveDataWithDate(1);
+    saveDataWithDate(2);
+    saveDataWithDate(3);
   }
 );
+
 
 // app.use('/', function (req, res) {
 //   res.render('index');
@@ -208,17 +206,12 @@ app.get('/chart', function(req, res) {
         });
       }
 
-      //res.json(results);
       res.json({
         percentageData: percentageData,
         stoargeData: stoargeData,
         dateRange: dateRange
       });
 
-      // fs.writeFile('./data/tmp', JSON.stringify({percentageData:percentageData, stoargeData:stoargeData, dateRange: dateRange}), function(err) {
-      //   if (err) return console.log(err);
-      //   console.log('Write data to tmp');
-      // });
     });
 });
 
@@ -254,6 +247,6 @@ app.use(function(req, res, next) {
 //  });
 //});
 
-app.listen(8888, function() {
+app.listen(80, function() {
   console.log('Server running sucessfully....');
 });
