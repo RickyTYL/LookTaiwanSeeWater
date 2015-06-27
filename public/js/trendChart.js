@@ -248,14 +248,17 @@ d3.json('trendChartData.json', function (error, rawData) {
         
         var data = rawData.map(function (d) {
                                return {
+                              //date:  parseDate(d.concentration),
+                              //pct50: parseFloat(d.immediateLevel)
                                date:  parseDate(d.date),
                                pct05: d.pct05 / 1000,
                                pct25: d.pct25 / 1000,
                                pct50: d.pct50 / 1000,
                                pct75: d.pct75 / 1000,
-                               pct95: d.pct95 / 1000
+                               pct95: d.pct95 / 1000,
                                };
                                });
+        console.log(data);
         
         d3.json('trendChartMarker.json', function (error, markerData) {
                 if (error) {
