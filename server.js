@@ -17,16 +17,16 @@ var emailSystem = require('./email');
 //app.set('view engine', 'html');
 app.use(express.static(path.join(__dirname, 'public')));
 
-function saveDataWithDate(pastDay) {
+var saveDataWithDate = function saveData(pastDay) {
   var date = moment().subtract(pastDay, 'days').format('YYYY-MM-DD');
   reservoir.getPastStatistic(function(err, data) {
-    if (err) {saveDataWithDate(pastDay);}
+    if (err) {saveData(pastDay);}
     fs.writeFile('./data/' + date, JSON.stringify(data), function(err) {
-      if (err) console.log(err);
+      if (err) saveData(pastDay);
       console.log('Write data to ' + date);
     });
   }, pastDay);
-}
+};
 
 // function getReservoirData() {
 //   reservoir.getPastStatistic(function(err, data) {
