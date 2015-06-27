@@ -175,43 +175,22 @@ app.get('/chart', function(req, res) {
       }
     },
     function(err, results) {
-      var data = results.one;
-      var percentageData = [];
-      var stoargeData = [];
-      var dateRange = [];
+      var data = [results.seven,results.six,results.five,results.four,results.three,results.two,results.one];
 
-      for (var i = 7; i > 0; i--) dateRange.push(moment().subtract(i, 'days').format('MM/DD'));
+      var chartData = [];
 
-      for (var j = 0; j < data.length; j++) {
-        percentageData.push({
-          resevoir: data[j].reservoirName,
-          first: results.one[j].lastPercentage,
-          second: results.two[j].lastPercentage,
-          third: results.three[j].lastPercentage,
-          fourth: results.four[j].lastPercentage,
-          fifth: results.five[j].lastPercentage,
-          sixth: results.six[j].lastPercentage,
-          seventh: results.seven[j].lastPercentage,
-        });
-
-        stoargeData.push({
-          resevoir: data[j].reservoirName,
-          first: results.one[j].lastStorage,
-          second: results.two[j].lastStorage,
-          third: results.three[j].lastStorage,
-          fourth: results.four[j].lastStorage,
-          fifth: results.five[j].lastStorage,
-          sixth: results.six[j].lastStorage,
-          seventh: results.seven[j].lastStorage,
-        });
+      for (var i = 6; i >= 0; i--)
+      {
+        var object = { date: moment().subtract(i+1, 'days').format('MM/DD') };
+        for(var j=0; j < data[i].length; j++)
+        {
+          var property = data[i][j].reservoirName;
+          var value = (data[i])[j].lastPercentage;
+          object[property] = value;
+        }
+        chartData.push(object);
       }
-
-      res.json({
-        percentageData: percentageData,
-        stoargeData: stoargeData,
-        dateRange: dateRange
-      });
-
+      res.json(chartData);
     });
 });
 
