@@ -18,7 +18,7 @@ var emailSystem = require('./email');
 app.use(express.static(path.join(__dirname, 'public')));
 
 function getReservoirData() {
-  reservoir.statistic(function(err, data) {
+  reservoir.getPastStatistic(function(err, data) {
     if (err) console.error(err);
 
     var yesterday = moment().subtract(1, 'days').format('YYYY-MM-DD');
@@ -26,7 +26,7 @@ function getReservoirData() {
       if (err) return console.log(err);
       console.log('Write data to ' + yesterday);
     });
-  });
+  }, 1);
 }
 getReservoirData();
 
