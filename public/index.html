@@ -612,13 +612,33 @@
 </aside>
 <!-- Map -->
 <section id="contact" class="map">
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3616.409318398306!2d121.57470574337773!3d24.986203825846083!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442aa79452c2f49%3A0x9e8d07508e3bf507!2z5pS_5rK75aSn5a24!5e0!3m2!1sen!2stw!4v1431745238501" width="100%" height="100%" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+    <select id="trendChoose" onchange="trendChoose($('#trendChoose').val())" >
+        <option value="0">石門水庫</option>
+        <option value="1">翡翠水庫</option>
+        <option value="2">寶山第二水庫</option>
+        <option value="3">永和山水庫</option>
+        <option value="4">明德水庫</option>
+        <option value="5">鯉魚潭水庫</option>
+        <option value="6">德基水庫</option>
+        <option value="7">石岡壩</option>
+        <option value="8">霧社水庫</option>
+        <option value="9">日月潭水庫</option>
+        <option value="10">集集攔河堰</option>
+        <option value="11">仁義潭水庫</option>
+        <option value="12">白河水庫</option>
+        <option value="13">烏山頭水庫</option>
+        <option value="14">曾文水庫</option>
+        <option value="15">南化水庫</option>
+        <option value="16">阿公店水庫</option>
+        <option value="17">牡丹水庫</option>
+    </select>
+    <!-- <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3616.409318398306!2d121.57470574337773!3d24.986203825846083!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442aa79452c2f49%3A0x9e8d07508e3bf507!2z5pS_5rK75aSn5a24!5e0!3m2!1sen!2stw!4v1431745238501" width="100%" height="100%" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe> -->
     <!--<iframe width="100%" height="100%" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=Twitter,+Inc.,+Market+Street,+San+Francisco,+CA&amp;aq=0&amp;oq=twitter&amp;sll=28.659344,-81.187888&amp;sspn=0.128789,0.264187&amp;ie=UTF8&amp;hq=Twitter,+Inc.,+Market+Street,+San+Francisco,+CA&amp;t=m&amp;z=15&amp;iwloc=A&amp;output=embed"></iframe>-->
-    <br />
+    <!-- <br /> -->
     <small>
         <a href="https://maps.google.com/maps?f=q&amp;source=embed&amp;hl=en&amp;geocode=&amp;q=Twitter,+Inc.,+Market+Street,+San+Francisco,+CA&amp;aq=0&amp;oq=twitter&amp;sll=28.659344,-81.187888&amp;sspn=0.128789,0.264187&amp;ie=UTF8&amp;hq=Twitter,+Inc.,+Market+Street,+San+Francisco,+CA&amp;t=m&amp;z=15&amp;iwloc=A"></a>
     </small>
-</iframe>
+    <div class="trendChart"></div>
 </section>
 
 <!-- Footer -->
@@ -902,6 +922,8 @@
     $('.carousel').carousel({
         interval: 5000 //changes the speed
     })
+        trendChoose($('#trendChoose').val());
+
 </script>
 
 </body>
