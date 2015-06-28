@@ -181,7 +181,7 @@ app.get('/chart', function(req, res) {
 
       for (var i = 6; i >= 0; i--)
       {
-        var object = { date: moment().subtract(i+1, 'days').format('MM/DD') };
+        var object = { date: moment().subtract(i+1, 'days').format('YYYY-MM-DD') };
         for(var j=0; j < data[i].length; j++)
         {
           var property = data[i][j].reservoirName;
@@ -194,7 +194,67 @@ app.get('/chart', function(req, res) {
     });
 });
 
+app.get('/chart30', function(req, res) {
 
+  async.parallel({
+      d1: function(callback) {readPastData(30,callback);},
+      d2: function(callback) {readPastData(29,callback);},
+      d3: function(callback) {readPastData(28,callback);},
+      d4: function(callback) {readPastData(27,callback);},
+      d5: function(callback) {readPastData(26,callback);},
+      d6: function(callback) {readPastData(25,callback);},
+      d7: function(callback) {readPastData(24,callback);},
+      d8: function(callback) {readPastData(23,callback);},
+      d9: function(callback) {readPastData(22,callback);},
+      d10: function(callback) {readPastData(21,callback);},
+      d11: function(callback) {readPastData(20,callback);},
+      d12: function(callback) {readPastData(19,callback);},
+      d13: function(callback) {readPastData(18,callback);},
+      d14: function(callback) {readPastData(17,callback);},
+      d15: function(callback) {readPastData(16,callback);},
+      d16: function(callback) {readPastData(15,callback);},
+      d17: function(callback) {readPastData(14,callback);},
+      d18: function(callback) {readPastData(13,callback);},
+      d19: function(callback) {readPastData(12,callback);},
+      d20: function(callback) {readPastData(11,callback);},
+      d21: function(callback) {readPastData(10,callback);},
+      d22: function(callback) {readPastData(9,callback);},
+      d23: function(callback) {readPastData(8,callback);},
+      d24: function(callback) {readPastData(7,callback);},
+      d25: function(callback) {readPastData(6,callback);},
+      d26: function(callback) {readPastData(5,callback);},
+      d27: function(callback) {readPastData(4,callback);},
+      d28: function(callback) {readPastData(3,callback);},
+      d29: function(callback) {readPastData(2,callback);},
+      d30: function(callback) {readPastData(1,callback);}
+    },
+    function(err, results) {
+      var data = [results.d1,results.d2,results.d3,results.d4,results.d5,results.d6,results.d7,results.d8,results.d9,results.d10,results.d11,results.d12,results.d13,results.d14,results.d15,results.d16,results.d17,results.d18,results.d19,results.d20,results.d21,results.d22,results.d23,results.d24,results.d25,results.d26,results.d27,results.d28,results.d29,results.d30];
+
+      var chartData = [];
+
+      for (var i = 0; i < 30; i++)
+      {
+        var object = { date: moment().subtract(30-i, 'days').format('YYYY-MM-DD') };
+        for(var j=0; j < data[i].length; j++)
+        {
+          var property = data[i][j].reservoirName;
+          var value = data[i][j].lastPercentage;
+          object[property] = value;
+        }
+        chartData.push(object);
+      }
+      res.json(chartData);
+    });
+});
+
+function readPastData(pastDay,callback)
+{
+  fs.readFile('./data/' + moment().subtract(pastDay, 'days').format('YYYY-MM-DD'), function(err, data) {
+    if (err) callback(err);
+    callback(null, JSON.parse(data));
+  });
+}
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   //  var err = new Error('Not Found');
