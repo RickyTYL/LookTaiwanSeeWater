@@ -1,4 +1,5 @@
 @import url(//fonts.googleapis.com/css?family=Open+Sans:400,700);
+<<<<<<< HEAD
 
 
 /* 趨勢圖專用                                         */
@@ -12,12 +13,20 @@ svg {
   font: 14px 'Open Sans';
 }
 
+=======
+ 
+svg {
+  font: 14px 'Open Sans';
+}
+ 
+>>>>>>> c3e69acad5461cd55c9f5cb07eb7361835f1dc9f
 .axis path,
 .axis line {
   fill: none;
   stroke: #000;
   shape-rendering: crispEdges;
 }
+<<<<<<< HEAD
 
 .axis text {
   fill: #000;
@@ -31,54 +40,109 @@ svg {
   stroke-width: 1;
 }
 
+=======
+ 
+.axis text {
+  fill: #000;
+}
+ 
+.axis .tick line {
+  stroke: rgba(0, 0, 0, 0.1);
+}
+ 
+.area {
+  stroke-width: 1;
+}
+ 
+>>>>>>> c3e69acad5461cd55c9f5cb07eb7361835f1dc9f
 .area.outer,
 .legend .outer {
   fill: rgba(230, 230, 255, 0.8);
   stroke: rgba(216, 216, 255, 0.8);
 }
+<<<<<<< HEAD
 
+=======
+ 
+>>>>>>> c3e69acad5461cd55c9f5cb07eb7361835f1dc9f
 .area.inner,
 .legend .inner {
   fill: rgba(127, 127, 255, 0.8);
   stroke: rgba(96, 96, 255, 0.8);
 }
+<<<<<<< HEAD
 
+=======
+ 
+>>>>>>> c3e69acad5461cd55c9f5cb07eb7361835f1dc9f
 .median-line,
 .legend .median-line {
   fill: none;
   stroke: #000;
   stroke-width: 3;
 }
+<<<<<<< HEAD
 
+=======
+ 
+>>>>>>> c3e69acad5461cd55c9f5cb07eb7361835f1dc9f
 .legend .legend-bg {
   fill: rgba(0, 0, 0, 0.5);
   stroke: rgba(0, 0, 0, 0.5);
 }
+<<<<<<< HEAD
 
+=======
+ 
+>>>>>>> c3e69acad5461cd55c9f5cb07eb7361835f1dc9f
 .marker.client .marker-bg,
 .marker.client path {
   fill: rgba(255, 127, 0, 0.8);
   stroke: rgba(255, 127, 0, 0.8);
   stroke-width: 3;
 }
+<<<<<<< HEAD
 
+=======
+ 
+>>>>>>> c3e69acad5461cd55c9f5cb07eb7361835f1dc9f
 .marker.server .marker-bg,
 .marker.server path {
   fill: rgba(0, 153, 51, 0.8);
   stroke: rgba(0, 153, 51, 0.8);
   stroke-width: 3;
 }
+<<<<<<< HEAD
 
 .marker path {
   fill: none;
 }
 
+=======
+ 
+.marker path {
+  fill: none;
+}
+ 
+>>>>>>> c3e69acad5461cd55c9f5cb07eb7361835f1dc9f
 .legend text,
 .marker text {
   fill: #fff;
   font-weight: bold;
 }
+<<<<<<< HEAD
 
 .marker text {
   text-anchor: middle;
 }
+=======
+ 
+.marker text {
+  text-anchor: middle;
+}
+#trendChoose{
+  margin-top: 10px;
+  margin-left: 45%;
+  margin-left: 45%;
+}
+>>>>>>> c3e69acad5461cd55c9f5cb07eb7361835f1dc9f

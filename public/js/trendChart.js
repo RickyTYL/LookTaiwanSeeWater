@@ -15,6 +15,7 @@ function addAxesAndLegend (svg, xAxis, yAxis, margin, chartWidth, chartHeight) {
           (-margin.left)                 + ',' + (chartHeight + margin.bottom));
 */
 
+<<<<<<< HEAD
     var axes = svg.append('g')
     .attr('clip-path', 'url(#axes-clip)');
     
@@ -32,6 +33,25 @@ function addAxesAndLegend (svg, xAxis, yAxis, margin, chartWidth, chartHeight) {
     .attr('dy', '.71em')
     .style('text-anchor', 'end')
     .text('Time (s)');
+=======
+var axes = svg.append('g')
+.attr('clip-path', 'url(#axes-clip)');
+
+axes.append('g')
+.attr('class', 'x axis')
+.attr('transform', 'translate(0,' + chartHeight + ')')
+.call(xAxis);
+
+axes.append('g')
+.attr('class', 'y axis')
+.call(yAxis)
+.append('text')
+.attr('transform', 'rotate(-90)')
+.attr('y', 6)
+.attr('dy', '.71em')
+.style('text-anchor', 'end')
+.text('蓄水量百分比(%)');
+>>>>>>> c3e69acad5461cd55c9f5cb07eb7361835f1dc9f
 /*
     var legend = svg.append('g')
     .attr('class', 'legend')
@@ -74,6 +94,7 @@ function addAxesAndLegend (svg, xAxis, yAxis, margin, chartWidth, chartHeight) {
     .attr('x', 115)
     .attr('y', 85)
     .text('Median');
+<<<<<<< HEAD
  */
 }
 
@@ -92,11 +113,32 @@ function drawPaths (svg, data, x, y) {
     .y1(function (d) { return y(d.pct50); });
     
 */
+=======
+    */
+}
+
+function drawPaths (svg, data, x, y) {
+
+    // var upperOuterArea = d3.svg.area()
+    // .interpolate('basis')
+    // .x (function (d) { return x(d.date) || 1; })
+    // .y0(function (d) { return y(d.pct95); })
+    // .y1(function (d) { return y(d.pct75); });
+    
+    // var upperInnerArea = d3.svg.area()
+    // .interpolate('basis')
+    // .x (function (d) { return x(d.date) || 1; })
+    // .y0(function (d) { return y(d.pct75); })
+    // .y1(function (d) { return y(d.pct50); });
+    
+
+>>>>>>> c3e69acad5461cd55c9f5cb07eb7361835f1dc9f
     var medianLine = d3.svg.line()
     .interpolate('basis')
     .x(function (d) { return x(d.date); })
     .y(function (d) { return y(d.pct50); });
     
+<<<<<<< HEAD
 /*
     var lowerInnerArea = d3.svg.area()
     .interpolate('basis')
@@ -135,6 +177,46 @@ function drawPaths (svg, data, x, y) {
     .attr('clip-path', 'url(#rect-clip)');
     
 */
+=======
+
+    // var lowerInnerArea = d3.svg.area()
+    // .interpolate('basis')
+    // .x (function (d) { return x(d.date) || 1; })
+    // .y0(function (d) { return y(d.pct50); })
+    // .y1(function (d) { return y(d.pct25); });
+    
+    // var lowerOuterArea = d3.svg.area()
+    // .interpolate('basis')
+    // .x (function (d) { return x(d.date) || 1; })
+    // .y0(function (d) { return y(d.pct25); })
+    // .y1(function (d) { return y(d.pct05); });
+    
+
+    svg.datum(data);
+    
+
+    // svg.append('path')
+    // .attr('class', 'area upper outer')
+    // .attr('d', upperOuterArea)
+    // .attr('clip-path', 'url(#rect-clip)');
+    
+    // svg.append('path')
+    // .attr('class', 'area lower outer')
+    // .attr('d', lowerOuterArea)
+    // .attr('clip-path', 'url(#rect-clip)');
+    
+    // svg.append('path')
+    // .attr('class', 'area upper inner')
+    // .attr('d', upperInnerArea)
+    // .attr('clip-path', 'url(#rect-clip)');
+    
+    // svg.append('path')
+    // .attr('class', 'area lower inner')
+    // .attr('d', lowerInnerArea)
+    // .attr('clip-path', 'url(#rect-clip)');
+    
+
+>>>>>>> c3e69acad5461cd55c9f5cb07eb7361835f1dc9f
     svg.append('path')
     .attr('class', 'median-line')
     .attr('d', medianLine)
@@ -195,6 +277,7 @@ function startTransitions (svg, chartWidth, chartHeight, rectClip, markers, x) {
 }
 
 function makeChart (data, markers) {
+<<<<<<< HEAD
     
     console.log("In func makeChart.");
     console.log(data[0].date);
@@ -205,20 +288,42 @@ function makeChart (data, markers) {
     var svgWidth  = 960,
     svgHeight = 500,
     margin = { top: 20, right: 20, bottom: 40, left: 40 },
+=======
+
+    console.log("In func makeChart.");
+    // console.log(data[0].date);
+    // console.log(data[0].pct50);
+    // console.log(data[6].date);
+    // console.log(data[6].pct50);
+    
+    var svgWidth  = 960,
+    svgHeight = 500,
+    margin = { top: 20, right: 20, bottom: 40, left: 400 },
+>>>>>>> c3e69acad5461cd55c9f5cb07eb7361835f1dc9f
     chartWidth  = svgWidth  - margin.left - margin.right,
     chartHeight = svgHeight - margin.top  - margin.bottom;
     
     var x = d3.time.scale().range([0, chartWidth])
     .domain(d3.extent(data, function (d) { return d.date; })),
     y = d3.scale.linear().range([chartHeight, 0])
+<<<<<<< HEAD
     .domain([0, d3.max(data, function (d) { return d.pct95; })]);
     
+=======
+    // .domain([data[0].pct50/10*10-10, d3.max(data, function (d) { return d.pct95; })]);
+        .domain([data[0].pct50/10*10-10, data[0].pct50/10*10+10]);
+
+>>>>>>> c3e69acad5461cd55c9f5cb07eb7361835f1dc9f
     var xAxis = d3.svg.axis().scale(x).orient('bottom')
     .innerTickSize(-chartHeight).outerTickSize(0).tickPadding(10),
     yAxis = d3.svg.axis().scale(y).orient('left')
     .innerTickSize(-chartWidth).outerTickSize(0).tickPadding(10);
     
+<<<<<<< HEAD
     var svg = d3.select('body').append('svg')
+=======
+    var svg = d3.select('.trendChart').append('svg')
+>>>>>>> c3e69acad5461cd55c9f5cb07eb7361835f1dc9f
     .attr('width',  svgWidth)
     .attr('height', svgHeight)
     .append('g')
@@ -238,6 +343,7 @@ function makeChart (data, markers) {
 
 //makeChart(testData, testMarker);
 
+<<<<<<< HEAD
 
 var parseDate  = d3.time.format('%Y-%m-%d').parse;
 d3.json('trendChartData.json', function (error, rawData) {
@@ -277,3 +383,148 @@ d3.json('trendChartData.json', function (error, rawData) {
                 makeChart(data, markers);
                 });
         });
+=======
+// var trendChartChoose = document.getElementById('trendChoose').value;
+// console.log(trendChartChoose);
+// var parseDate  = d3.time.format('%Y-%m-%d').parse;
+// d3.json('/chart', function (error, rawData) {
+//         if (error) {
+//         console.error(error);
+//         return;
+//         }
+
+//         var data = rawData.map(function (d) {
+
+//                                return {
+//                               //date:  parseDate(d.concentration),
+//                               //pct50: parseFloat(d.immediateLevel)
+//                                date:  parseDate(d.date),
+//                                pct05: d.石門水庫 /1,
+//                                pct50: d.trendChartChoose /1,
+//                                pct25: d.寶山第二水庫 /1,
+//                                pct75: d.永和山水庫 /1,
+//                                pct95: d.明德水庫 /1,
+//                                };
+//                                });
+//         console.log(data);
+
+//         d3.json('trendChartMarker.json', function (error, markerData) {
+//                 if (error) {
+//                 console.error(error);
+//                 return;
+//                 }
+
+//                 var markers = markerData.map(function (marker) {
+//                                              return {
+//                                              date: parseDate(marker.date),
+//                                              type: marker.type,
+//                                              version: marker.version
+//                                              };
+//                                              });
+
+//                 makeChart(data, markers);
+//                 });
+//         });
+function trendChoose(trendChartChoose){
+console.log(trendChartChoose);
+    var parseDate  = d3.time.format('%Y-%m-%d').parse;
+    $('.trendChart').html('');
+    d3.json('/chart', function (error, rawData) {
+        if (error) {
+            console.error(error);
+            return;
+        }
+        
+        var data = rawData.map(function (d) {
+            console.log(d);
+            switch (Number(trendChartChoose)){
+
+              case 1:
+              choose = d.翡翠水庫;
+              console.log("XXXX");
+              break;
+              case 2:
+              choose = d.寶山第二水庫;
+              break;
+              case 3:
+              choose = d.永和山水庫;
+              break;
+              case 4:
+              choose = d.明德水庫;
+              break;
+              case 5:
+              choose = d.鯉魚潭水庫;
+              break;
+              case 6:
+              choose = d.德基水庫;
+              break;
+              case 7:
+              choose = d.石岡壩;
+              break;
+              case 8:
+              choose = d.霧社水庫;
+              break;
+              case 9:
+              choose = d.日月潭水庫;
+              break;
+              case 10:
+              choose = d.集集攔河堰;
+              break;
+              case 11:
+              choose = d.仁義潭水庫;
+              break;
+              case 12:
+              choose = d.白河水庫;
+              break;
+              case 13:
+              choose = d.烏山頭水庫;
+              break;
+              case 14:
+              choose = d.曾文水庫;
+              break;
+              case 15:
+              choose = d.南化水庫;
+              break;
+              case 16:
+              choose = d.阿公店水庫;
+              break;
+              case 17:
+              choose = d.牡丹水庫;
+              break;
+              default:
+              choose = d.石門水庫;              
+          }
+          return {
+
+                              //date:  parseDate(d.concentration),
+                              //pct50: parseFloat(d.immediateLevel)
+                              date:  parseDate(d.date),
+                              pct05: d.石門水庫 /1,
+                              
+                              pct50: choose /1,
+                              pct25: d.寶山第二水庫 /1,
+                              pct75: d.永和山水庫 /1,
+                              pct95: d.明德水庫 /1,
+                          };
+                      });
+console.log(data);
+
+d3.json('trendChartMarker.json', function (error, markerData) {
+    if (error) {
+        console.error(error);
+        return;
+    }
+
+    var markers = markerData.map(function (marker) {
+     return {
+         date: parseDate(marker.date),
+         type: marker.type,
+         version: marker.version
+     };
+ });
+
+    makeChart(data, markers);
+});
+});
+}
+>>>>>>> c3e69acad5461cd55c9f5cb07eb7361835f1dc9f

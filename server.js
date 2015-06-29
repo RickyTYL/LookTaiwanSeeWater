@@ -239,6 +239,7 @@ app.get('/chart30', function(req, res) {
         for(var j=0; j < data[i].length; j++)
         {
           var property = data[i][j].reservoirName;
+          console.log('data[i][j].reservoirName');
           var value = data[i][j].lastPercentage;
           object[property] = value;
         }
